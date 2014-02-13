@@ -7,11 +7,22 @@
 //
 
 #import "AppDelegate.h"
+#import <AFOAuth1Client.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    AFOAuth1Client *twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@""] key:@"lxkCGGkXkHSXkyCOJAcA" secret:@"ichoJaHRehRQZtSOWmhnvYSJRuqxsPhx"];
+    
+    // Your application will be sent to the background until the user authenticates, and then the app will be brought back using the callback URL
+    [twitterClient authorizeUsingOAuthWithRequestTokenPath:@"http://api.discogs.com/oauth/request_token" userAuthorizationPath:@"http://www.discogs.com/oauth/authorize" callbackURL:[NSURL URLWithString:@"success://success"] accessTokenPath:@"http://api.discogs.com/oauth/access_token"  accessMethod:@"GET" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
+        NSLog(@"EXXXITO");
+    } failure:^(NSError *error) {
+        NSLog(@"faill");
+    }];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -44,6 +55,17 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:@{kAFApplicationLaunchOptionsURLKey: url}];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+    
+    return YES;
 }
 
 @end
