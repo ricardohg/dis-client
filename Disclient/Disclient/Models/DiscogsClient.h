@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking.h>
 
-@interface DiscogsClient : NSObject
+#define BASEURL @"http://api.discogs.com/oauth/"
+
+@interface DiscogsClient : AFHTTPClient
+
++(DiscogsClient*)client;
 
 @end
