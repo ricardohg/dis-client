@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+#import <AFOAuth1Client.h>
 
 #define BASEURL @"http://api.discogs.com/oauth/"
 
-@interface DiscogsClient : AFHTTPClient
+@interface DiscogsClient : AFOAuth1Client
 
 +(DiscogsClient*)client;
 

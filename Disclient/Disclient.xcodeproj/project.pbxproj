@@ -10,6 +10,8 @@
 		26CCD387B3EA4916A2EF800B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EAD254A1364322B3E87ECB /* libPods.a */; };
 		8C01298A18B02F9400FABB64 /* DiscogsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C01298718B02F9400FABB64 /* DiscogsClient.m */; };
 		8C01298B18B02F9400FABB64 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C01298918B02F9400FABB64 /* User.m */; };
+		8C01299018B03B4600FABB64 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C01298E18B03B4600FABB64 /* HomeViewController.m */; };
+		8C01299118B03B4600FABB64 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C01298F18B03B4600FABB64 /* HomeViewController.xib */; };
 		8C400005186A0412007A763C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C400004186A0412007A763C /* XCTest.framework */; };
 		8C400006186A0412007A763C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C40FFEB186A0412007A763C /* Foundation.framework */; };
 		8C400007186A0412007A763C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C40FFEF186A0412007A763C /* UIKit.framework */; };
@@ -40,6 +42,9 @@
 		8C01298718B02F9400FABB64 /* DiscogsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscogsClient.m; sourceTree = "<group>"; };
 		8C01298818B02F9400FABB64 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		8C01298918B02F9400FABB64 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		8C01298D18B03B4600FABB64 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ViewControllers/HomeViewController.h; sourceTree = "<group>"; };
+		8C01298E18B03B4600FABB64 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ViewControllers/HomeViewController.m; sourceTree = "<group>"; };
+		8C01298F18B03B4600FABB64 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = ViewControllers/HomeViewController.xib; sourceTree = "<group>"; };
 		8C400003186A0412007A763C /* DisclientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DisclientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C400004186A0412007A763C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8C40000C186A0412007A763C /* DisclientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DisclientTests-Info.plist"; sourceTree = "<group>"; };
@@ -95,6 +100,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8C01298C18B03ADF00FABB64 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C01298D18B03B4600FABB64 /* HomeViewController.h */,
+				8C01298E18B03B4600FABB64 /* HomeViewController.m */,
+				8C01298F18B03B4600FABB64 /* HomeViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		8C40000A186A0412007A763C /* DisclientTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +163,7 @@
 		8C40FFF1186A0412007A763C /* Disclient */ = {
 			isa = PBXGroup;
 			children = (
+				8C01298C18B03ADF00FABB64 /* ViewControllers */,
 				8C01298518B02F9400FABB64 /* Models */,
 				8C40FFFA186A0412007A763C /* AppDelegate.h */,
 				8C40FFFB186A0412007A763C /* AppDelegate.m */,
@@ -255,6 +271,7 @@
 			files = (
 				8C40FFF6186A0412007A763C /* InfoPlist.strings in Resources */,
 				8C40FFFE186A0412007A763C /* Images.xcassets in Resources */,
+				8C01299118B03B4600FABB64 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +318,7 @@
 				8C01298B18B02F9400FABB64 /* User.m in Sources */,
 				8C40FFFC186A0412007A763C /* AppDelegate.m in Sources */,
 				8C01298A18B02F9400FABB64 /* DiscogsClient.m in Sources */,
+				8C01299018B03B4600FABB64 /* HomeViewController.m in Sources */,
 				8C40FFF8186A0412007A763C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

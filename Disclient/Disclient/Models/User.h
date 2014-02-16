@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFOAuth1Client.h>
 
 @interface User : NSObject
+
+@property (nonatomic,strong) AFOAuth1Token * token;
+
++(User*)currentUser;
+
++(void)authenticateUserWithKey:(NSString*)key andSecret:(NSString*)secret withBlock:(void(^)(AFOAuth1Token * token, NSError *error))block;
+
+-(void)getUserInfowithBlock:(void(^)(NSError * error))block;
 
 @end
