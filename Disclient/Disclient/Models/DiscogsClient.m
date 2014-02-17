@@ -16,7 +16,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _client = [[DiscogsClient alloc] initWithBaseURL:[NSURL URLWithString:BASEURL] key:@"lxkCGGkXkHSXkyCOJAcA" secret:@"ichoJaHRehRQZtSOWmhnvYSJRuqxsPhx"];
+        _client = [[DiscogsClient alloc] initWithBaseURL:[NSURL URLWithString:BASEURL] key:OAUTHKEY secret:OAUTHSECRET];
     });
     
     return _client;

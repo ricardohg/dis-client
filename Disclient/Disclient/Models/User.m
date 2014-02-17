@@ -11,6 +11,16 @@
 
 @implementation User
 
+-(id)initWithData:(NSDictionary *)data {
+    self = [super init];
+    if (self) {
+        self.userId = data[@"id"];
+        self.userName = data[@"username"];
+    }
+    
+    return self;
+}
+
 +(User *)currentUser {
     static User * _currentUser;
     
@@ -22,10 +32,9 @@
     return _currentUser;
 }
 
-+(void)authenticateUserWithKey:(NSString *)key andSecret:(NSString *)secret withBlock:(void (^)(AFOAuth1Token *, NSError *))block {
++(void)authenticateUserWithBlock:(void (^)(AFOAuth1Token *, NSError *))block {
     
     DiscogsClient *authClient = [DiscogsClient client];
-    
     
     // Your application will be sent to the background until the user authenticates, and then the app will be brought back using the callback URL
     [authClient authorizeUsingOAuthWithRequestTokenPath:@"http://api.discogs.com/oauth/request_token" userAuthorizationPath:@"http://www.discogs.com/oauth/authorize" callbackURL:[NSURL URLWithString:@"success://success"] accessTokenPath:@"http://api.discogs.com/oauth/access_token"  accessMethod:@"GET" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
@@ -40,19 +49,41 @@
     
 }
 
--(void)getUserInfowithBlock:(void (^)(NSError *))block {
+-(void)getUserInfoWithBlock:(void (^)(User *, NSError *))block {
     
     DiscogsClient * client = [DiscogsClient client];
     
-    client = [DiscogsClient client];
-    client.accessToken = self.token;
+    AFOAuth1Token * token = [AFOAuth1Token retrieveCredentialWithIdentifier:@"ACCESS_TOKEN"];
+    
+    [client setAccessToken:token];
     
     [client getPath:@"http://api.discogs.com/oauth/identity" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"success");
+        
+        NSError *error = nil;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
+        
+        User * user = [[User alloc] initWithData:json];
+        if (block) {
+            block(user,error);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"bah");
+        if (block) {
+            block(nil,error);
+        }
     }];
 
+}
+
+-(void)userProfileForUserName:(NSString *)user withBlock:(void (^)(User *, NSError *))block {
+    
+    DiscogsClient * client = [DiscogsClient client];
+    NSString * path = [NSString stringWithFormat:@"http://api.discogs.com/users/%@",user];
+    [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        puts("eso");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        puts("no");
+    }];
+    
 }
 
 @end

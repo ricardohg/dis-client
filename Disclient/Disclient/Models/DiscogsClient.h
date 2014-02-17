@@ -10,6 +10,8 @@
 #import <AFOAuth1Client.h>
 
 #define BASEURL @"http://api.discogs.com/oauth/"
+#define OAUTHKEY @"lxkCGGkXkHSXkyCOJAcA"
+#define OAUTHSECRET @"ichoJaHRehRQZtSOWmhnvYSJRuqxsPhx"
 
 @interface DiscogsClient : AFOAuth1Client
 

@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)authPressed:(id)sender {
-    [User authenticateUserWithKey:@"lxkCGGkXkHSXkyCOJAcA" andSecret:@"ichoJaHRehRQZtSOWmhnvYSJRuqxsPhx" withBlock:^(AFOAuth1Token *token, NSError *error) {
+    [User authenticateUserWithBlock:^(AFOAuth1Token *token, NSError *error) {
         [[User currentUser] setToken:token];
     }];
 }
@@ -38,7 +38,10 @@
     
     NSLog(@"%@",[[[User currentUser] token] secret]);
     
-    [[User currentUser] getUserInfowithBlock:^(NSError *error) {
+    [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
+        
+        [[User currentUser] userProfileForUserName:@"sebastianbn" withBlock:^(User *user, NSError *error) {
+        }];
     }];
     
 }

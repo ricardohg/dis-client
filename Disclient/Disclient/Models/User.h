@@ -12,11 +12,17 @@
 @interface User : NSObject
 
 @property (nonatomic,strong) AFOAuth1Token * token;
+@property (nonatomic,strong) NSString * userName;
+@property (nonatomic,strong) NSNumber * userId;
+
+-(id)initWithData:(NSDictionary*)data;
 
 +(User*)currentUser;
 
-+(void)authenticateUserWithKey:(NSString*)key andSecret:(NSString*)secret withBlock:(void(^)(AFOAuth1Token * token, NSError *error))block;
++(void)authenticateUserWithBlock:(void(^)(AFOAuth1Token * token, NSError *error))block;
 
--(void)getUserInfowithBlock:(void(^)(NSError * error))block;
+-(void)getUserInfoWithBlock:(void(^)(User * user, NSError * error))block;
+
+-(void)userProfileForUserName:(NSString*)user withBlock:(void(^)(User * user, NSError * error))block;
 
 @end
