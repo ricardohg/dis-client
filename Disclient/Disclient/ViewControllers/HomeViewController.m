@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import <MMDrawerBarButtonItem.h>
+#import <UIViewController+MMDrawerController.h>
 #import "User.h"
 
 @interface HomeViewController ()
@@ -20,8 +22,17 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        MMDrawerBarButtonItem * leftButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPressed:)];
+        self.navigationItem.leftBarButtonItem = leftButtonItem;
+        
     }
     return self;
+}
+
+-(void)leftButtonPressed:(id)sender {
+    
+     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+
 }
 
 - (void)viewDidLoad

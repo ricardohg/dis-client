@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import <AFOAuth1Client.h>
+#import <MMDrawerController.h>
 #import "HomeViewController.h"
+#import "MenuViewController.h"
 
 @implementation AppDelegate
 
@@ -16,11 +18,13 @@
 {
     
     HomeViewController * hvc = [[HomeViewController alloc] init];
+    MenuViewController * mvc = [[MenuViewController alloc] init];
     UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:hvc];
+    MMDrawerController * mdc = [[MMDrawerController alloc] initWithCenterViewController:nvc leftDrawerViewController:mvc];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = nvc;
+    self.window.rootViewController = mdc;
     [self.window makeKeyAndVisible];
     return YES;
 }
