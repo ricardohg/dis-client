@@ -24,6 +24,8 @@
 		8C40FFF8186A0412007A763C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C40FFF7186A0412007A763C /* main.m */; };
 		8C40FFFC186A0412007A763C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C40FFFB186A0412007A763C /* AppDelegate.m */; };
 		8C40FFFE186A0412007A763C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C40FFFD186A0412007A763C /* Images.xcassets */; };
+		8CB6A74B18C3D92C003A4CF0 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB6A74918C3D92C003A4CF0 /* MenuViewController.m */; };
+		8CB6A74C18C3D92C003A4CF0 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		8C40FFFA186A0412007A763C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8C40FFFB186A0412007A763C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8C40FFFD186A0412007A763C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8CB6A74818C3D92C003A4CF0 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = ViewControllers/MenuViewController.h; sourceTree = "<group>"; };
+		8CB6A74918C3D92C003A4CF0 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = ViewControllers/MenuViewController.m; sourceTree = "<group>"; };
+		8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = ViewControllers/MenuViewController.xib; sourceTree = "<group>"; };
 		B2EAD254A1364322B3E87ECB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +111,9 @@
 				8C01298D18B03B4600FABB64 /* HomeViewController.h */,
 				8C01298E18B03B4600FABB64 /* HomeViewController.m */,
 				8C01298F18B03B4600FABB64 /* HomeViewController.xib */,
+				8CB6A74818C3D92C003A4CF0 /* MenuViewController.h */,
+				8CB6A74918C3D92C003A4CF0 /* MenuViewController.m */,
+				8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 				8C40FFF6186A0412007A763C /* InfoPlist.strings in Resources */,
 				8C40FFFE186A0412007A763C /* Images.xcassets in Resources */,
 				8C01299118B03B4600FABB64 /* HomeViewController.xib in Resources */,
+				8CB6A74C18C3D92C003A4CF0 /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C01298B18B02F9400FABB64 /* User.m in Sources */,
+				8CB6A74B18C3D92C003A4CF0 /* MenuViewController.m in Sources */,
 				8C40FFFC186A0412007A763C /* AppDelegate.m in Sources */,
 				8C01298A18B02F9400FABB64 /* DiscogsClient.m in Sources */,
 				8C01299018B03B4600FABB64 /* HomeViewController.m in Sources */,
