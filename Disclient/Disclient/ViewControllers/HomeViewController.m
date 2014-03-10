@@ -42,6 +42,7 @@
         
         gravatarImageView.email = @"a.ricardohg@gmail.com";
         gravatarImageView.rating = GravatarRatingPG;
+        gravatarImageView.size = 160;
         [gravatarImageView loadGravatar:^{
             puts("gravatarloaded");
         }];
