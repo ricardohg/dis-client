@@ -40,7 +40,14 @@
     
     [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
         
-        [[User currentUser] userProfileForUserName:@"sebastianbn" withBlock:^(User *user, NSError *error) {
+        gravatarImageView.email = @"a.ricardohg@gmail.com";
+        gravatarImageView.rating = GravatarRatingPG;
+        [gravatarImageView loadGravatar:^{
+            puts("gravatarloaded");
+        }];
+        
+        
+        [[User currentUser] userProfileForUserName:user.userName withBlock:^(User *user, NSError *error) {
         }];
     }];
     

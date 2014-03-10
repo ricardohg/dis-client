@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIImageView+Gravatar.h>
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController {
+    __weak IBOutlet UIImageView_Gravatar * gravatarImageView;
+}
 
 @end

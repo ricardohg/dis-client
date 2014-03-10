@@ -14,17 +14,25 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.3):
     - MMDrawerController/Core
+  - SDWebImage (3.5.4):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.5.4)
   - SVProgressHUD (1.0)
+  - UIImageView-Gravatar (1.0):
+    - SDWebImage (~> 3.5)
 
 DEPENDENCIES:
   - AFOAuth1Client
   - MMDrawerController
   - SVProgressHUD
+  - UIImageView-Gravatar
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
   AFOAuth1Client: 8b06e54087732068e19c4efcd7bed5d74bc9538a
   MMDrawerController: 4445e1927e8947b7e2382136c9b7109840efbfb9
+  SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
+  UIImageView-Gravatar: b9adb0c79ece90bd81cd28a7950a926cbeaa8056
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.29.0
