@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UIViewController
+@interface MenuViewController : UIViewController {
+    __weak IBOutlet UITableView * menuTableView;
+}
 
 @end

@@ -43,10 +43,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self LoadProfile];
+    
+
+    [self loadProfile];
+
 }
 
--(void)LoadProfile {
+-(void)loadProfile {
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
     [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
