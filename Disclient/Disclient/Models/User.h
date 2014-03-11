@@ -15,6 +15,7 @@
 @property (nonatomic,strong) AFOAuth1Token * token;
 @property (nonatomic,strong) NSString * userName;
 @property (nonatomic,strong) NSNumber * userId;
+@property (nonatomic,strong) Profile * profile;
 
 
 -(id)initWithData:(NSDictionary*)data;

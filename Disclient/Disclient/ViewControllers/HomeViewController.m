@@ -12,6 +12,8 @@
 #import <SVProgressHUD.h>
 #import "User.h"
 
+#import "Wantlist.h"
+
 @interface HomeViewController ()
 
 @end
@@ -25,6 +27,7 @@
         // Custom initialization
         MMDrawerBarButtonItem * leftButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPressed:)];
         self.navigationItem.leftBarButtonItem = leftButtonItem;
+        self.title = @"Profile";
         
     }
     return self;
@@ -40,28 +43,36 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self LoadProfile];
 }
-- (IBAction)authPressed:(id)sender {
-    [User authenticateUserWithBlock:^(AFOAuth1Token *token, NSError *error) {
-        [[User currentUser] setToken:token];
-    }];
-}
-- (IBAction)getInfoPressed:(id)sender {
-    
+
+-(void)LoadProfile {
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
     [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
         if (!error) {
             
-            [[User currentUser] userProfileForUserName:user.userName withBlock:^(Profile *user, NSError *error) {
+            [[User currentUser] userProfileForUserName:user.userName withBlock:^(Profile *profile, NSError *error) {
                 [SVProgressHUD dismiss];
                 
-                gravatarImageView.email = user.email;
+                //store profile in current user
+                
+                User * currentUser = [User currentUser];
+                currentUser.profile = profile;
+                
+                //show data 
+                
+                userNameLabel.text = profile.userName;
+                locationLabel.text = profile.location;
+                
+                gravatarImageView.email = profile.email;
                 gravatarImageView.rating = GravatarRatingPG;
                 gravatarImageView.size = 160;
                 [gravatarImageView loadGravatar:^{
                     puts("gravatarloaded");
                 }];
+                
+                [self loadWantlist];
             }];
             
         } else {
@@ -69,7 +80,19 @@
         }
         
     }];
-    
+
+}
+- (IBAction)authPressed:(id)sender {
+    [User authenticateUserWithBlock:^(AFOAuth1Token *token, NSError *error) {
+        [[User currentUser] setToken:token];
+    }];
+}
+
+-(void)loadWantlist {
+    User * currentUser = [User currentUser];
+    [Wantlist wantlistForUser:currentUser.profile.userName withBlock:^(NSArray *profile, NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning

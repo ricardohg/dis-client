@@ -6,14 +6,6 @@
 //  Copyright (c) 2014 ric. All rights reserved.
 //
 
-//
-//  igViewController.m
-//  ScanBarCodes
-//
-//  Created by Torrey Betts on 10/10/13.
-//  Copyright (c) 2013 Infragistics. All rights reserved.
-//
-
 #import <AVFoundation/AVFoundation.h>
 #import "BarScanViewController.h"
 

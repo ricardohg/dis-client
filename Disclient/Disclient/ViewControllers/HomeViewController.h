@@ -11,6 +11,11 @@
 
 @interface HomeViewController : UIViewController {
     __weak IBOutlet UIImageView_Gravatar * gravatarImageView;
+    
+    __weak IBOutlet UILabel * userNameLabel;
+    __weak IBOutlet UILabel * locationLabel;
+    
+    
 }
 
 @end
