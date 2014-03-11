@@ -39,6 +39,9 @@
     // Your application will be sent to the background until the user authenticates, and then the app will be brought back using the callback URL
     [authClient authorizeUsingOAuthWithRequestTokenPath:@"http://api.discogs.com/oauth/request_token" userAuthorizationPath:@"http://www.discogs.com/oauth/authorize" callbackURL:[NSURL URLWithString:@"success://success"] accessTokenPath:@"http://api.discogs.com/oauth/access_token"  accessMethod:@"GET" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
         if (block) {
+            if ([AFOAuth1Token storeCredential:accessToken withIdentifier:@"ACCESS_TOKEN"]) {
+                puts("success");
+            }
             block(accessToken,nil);
         }
     } failure:^(NSError *error) {

@@ -10,7 +10,7 @@
 
 @interface Profile : NSObject
 
-@property (nonatomic,strong) NSString * iD;
+@property (nonatomic,strong) NSNumber * iD;
 @property (nonatomic,strong) NSString * userName;
 @property (nonatomic,strong) NSURL * resourceUrl;
 @property (nonatomic,strong) NSURL * inventoryUrl;
@@ -31,7 +31,7 @@
 @property (nonatomic,assign) int releasesContributed;
 @property (nonatomic,assign) int rank;
 @property (nonatomic,assign) int releasesRated;
-@property (nonatomic,assign) int ratingAvg;
+@property (nonatomic,assign) float ratingAvg;
 
 -(id)initWithData:(NSDictionary*)data;
 

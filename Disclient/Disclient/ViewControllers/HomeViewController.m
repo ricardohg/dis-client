@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import <MMDrawerBarButtonItem.h>
 #import <UIViewController+MMDrawerController.h>
+#import <SVProgressHUD.h>
 #import "User.h"
 
 @interface HomeViewController ()
@@ -47,12 +48,26 @@
 }
 - (IBAction)getInfoPressed:(id)sender {
     
-    NSLog(@"%@",[[[User currentUser] token] secret]);
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
     [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
+        if (!error) {
+            
+            [[User currentUser] userProfileForUserName:user.userName withBlock:^(Profile *user, NSError *error) {
+                [SVProgressHUD dismiss];
+                
+                gravatarImageView.email = user.email;
+                gravatarImageView.rating = GravatarRatingPG;
+                gravatarImageView.size = 160;
+                [gravatarImageView loadGravatar:^{
+                    puts("gravatarloaded");
+                }];
+            }];
+            
+        } else {
+            NSLog(@"error");
+        }
         
-        [[User currentUser] userProfileForUserName:user.userName withBlock:^(Profile *profile, NSError *error) {
-        }];
     }];
     
 }
