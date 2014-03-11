@@ -51,7 +51,7 @@
     
     [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
         
-        [[User currentUser] userProfileForUserName:@"sebastianbn" withBlock:^(User *user, NSError *error) {
+        [[User currentUser] userProfileForUserName:user.userName withBlock:^(Profile *profile, NSError *error) {
         }];
     }];
     

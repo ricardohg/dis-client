@@ -26,6 +26,7 @@
 		8C40FFFE186A0412007A763C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C40FFFD186A0412007A763C /* Images.xcassets */; };
 		8CB6A74B18C3D92C003A4CF0 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB6A74918C3D92C003A4CF0 /* MenuViewController.m */; };
 		8CB6A74C18C3D92C003A4CF0 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */; };
+		8CE676D818CD46CA0075140B /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE676D718CD46CA0075140B /* Profile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		8CB6A74818C3D92C003A4CF0 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = ViewControllers/MenuViewController.h; sourceTree = "<group>"; };
 		8CB6A74918C3D92C003A4CF0 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = ViewControllers/MenuViewController.m; sourceTree = "<group>"; };
 		8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = ViewControllers/MenuViewController.xib; sourceTree = "<group>"; };
+		8CE676D618CD46CA0075140B /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		8CE676D718CD46CA0075140B /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		B2EAD254A1364322B3E87ECB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +104,8 @@
 				8C01298718B02F9400FABB64 /* DiscogsClient.m */,
 				8C01298818B02F9400FABB64 /* User.h */,
 				8C01298918B02F9400FABB64 /* User.m */,
+				8CE676D618CD46CA0075140B /* Profile.h */,
+				8CE676D718CD46CA0075140B /* Profile.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				8C40FFFC186A0412007A763C /* AppDelegate.m in Sources */,
 				8C01298A18B02F9400FABB64 /* DiscogsClient.m in Sources */,
 				8C01299018B03B4600FABB64 /* HomeViewController.m in Sources */,
+				8CE676D818CD46CA0075140B /* Profile.m in Sources */,
 				8C40FFF8186A0412007A763C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

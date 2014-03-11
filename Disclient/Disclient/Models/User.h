@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <AFOAuth1Client.h>
+#import "Profile.h"
 
 @interface User : NSObject
 
 @property (nonatomic,strong) AFOAuth1Token * token;
 @property (nonatomic,strong) NSString * userName;
 @property (nonatomic,strong) NSNumber * userId;
+
 
 -(id)initWithData:(NSDictionary*)data;
 
@@ -23,6 +25,6 @@
 
 -(void)getUserInfoWithBlock:(void(^)(User * user, NSError * error))block;
 
--(void)userProfileForUserName:(NSString*)user withBlock:(void(^)(User * user, NSError * error))block;
+-(void)userProfileForUserName:(NSString*)user withBlock:(void(^)(Profile * profile, NSError * error))block;
 
 @end

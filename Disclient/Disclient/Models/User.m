@@ -74,12 +74,18 @@
 
 }
 
--(void)userProfileForUserName:(NSString *)user withBlock:(void (^)(User *, NSError *))block {
+-(void)userProfileForUserName:(NSString *)user withBlock:(void (^)(Profile *, NSError *))block {
     
     DiscogsClient * client = [DiscogsClient client];
     NSString * path = [NSString stringWithFormat:@"http://api.discogs.com/users/%@",user];
     [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        puts("eso");
+        NSError *error = nil;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
+        Profile * profile = [[Profile alloc] initWithData:json];
+        if (block) {
+            block(profile,error);
+        }
+    
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         puts("no");
     }];
