@@ -8,9 +8,13 @@
 
 #import "MenuViewController.h"
 #import "BarScanViewController.h"
+#import "HomeViewController.h"
+#import "WantlistViewController.h"
 #import <UIViewController+MMDrawerController.h>
 
 typedef NS_ENUM(NSInteger, UITableViewSection) {
+    UITableViewProfile,
+    UITableViewWantList,
     UITableViewScanIt
 };
 
@@ -38,7 +42,7 @@ typedef NS_ENUM(NSInteger, UITableViewSection) {
     menuTableView.delegate = self;
     menuTableView.dataSource = self;
     
-    sectionsArray = @[@"Scan it!"];
+    sectionsArray = @[@"Profile",@"Wantlist", @"Scan it!"];
 }
 
 #pragma mark
@@ -53,14 +57,12 @@ typedef NS_ENUM(NSInteger, UITableViewSection) {
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        cell.textLabel.textColor = [UIColor whiteColor];
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
         UIView * v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
         v.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:189.0/255.0 blue:48.0/255.0 alpha:1];
         cell.selectedBackgroundView = v;
     }
     
-    cell.backgroundColor = (indexPath.row %2 != 0) ? [UIColor clearColor] : [UIColor colorWithRed:42.0/255.0 green:55.0/255.0 blue:68.0/255.0 alpha:1.0];
     cell.textLabel.text = sectionsArray[indexPath.row];
     
     return cell;
@@ -69,15 +71,29 @@ typedef NS_ENUM(NSInteger, UITableViewSection) {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     switch (indexPath.row) {
             
         case UITableViewScanIt: {
-           
             BarScanViewController * bsvc = [[BarScanViewController alloc] init];
-            [self.mm_drawerController setCenterViewController:bsvc];
+            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:bsvc];
+            [self.mm_drawerController setCenterViewController:nav];
             
-            break;
-        }
+        } break;
+            
+        case UITableViewProfile: {
+            HomeViewController * hvc = [[HomeViewController alloc] init];
+            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:hvc];
+            [self.mm_drawerController setCenterViewController:nav];
+        } break;
+            
+        case UITableViewWantList: {
+            WantlistViewController * wvc = [[WantlistViewController alloc] init];
+            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:wvc];
+            [self.mm_drawerController setCenterViewController:nav];
+            
+        } break;
+            
             
   
             

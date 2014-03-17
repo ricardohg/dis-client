@@ -30,6 +30,10 @@
 		8CB6A74B18C3D92C003A4CF0 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB6A74918C3D92C003A4CF0 /* MenuViewController.m */; };
 		8CB6A74C18C3D92C003A4CF0 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */; };
 		8CE676D818CD46CA0075140B /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE676D718CD46CA0075140B /* Profile.m */; };
+		8CFC7EF218D6401000C5C47A /* Release.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF118D6401000C5C47A /* Release.m */; };
+		8CFC7EF618D685FC00C5C47A /* WantlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF418D685FC00C5C47A /* WantlistViewController.m */; };
+		8CFC7EF718D685FC00C5C47A /* WantlistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF518D685FC00C5C47A /* WantlistViewController.xib */; };
+		8CFC7EFA18D691BE00C5C47A /* DiscogsImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF918D691BE00C5C47A /* DiscogsImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,13 @@
 		8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = ViewControllers/MenuViewController.xib; sourceTree = "<group>"; };
 		8CE676D618CD46CA0075140B /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		8CE676D718CD46CA0075140B /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		8CFC7EF018D6401000C5C47A /* Release.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Release.h; sourceTree = "<group>"; };
+		8CFC7EF118D6401000C5C47A /* Release.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Release.m; sourceTree = "<group>"; };
+		8CFC7EF318D685FC00C5C47A /* WantlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WantlistViewController.h; path = ViewControllers/WantlistViewController.h; sourceTree = "<group>"; };
+		8CFC7EF418D685FC00C5C47A /* WantlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WantlistViewController.m; path = ViewControllers/WantlistViewController.m; sourceTree = "<group>"; };
+		8CFC7EF518D685FC00C5C47A /* WantlistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WantlistViewController.xib; path = ViewControllers/WantlistViewController.xib; sourceTree = "<group>"; };
+		8CFC7EF818D691BD00C5C47A /* DiscogsImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscogsImage.h; sourceTree = "<group>"; };
+		8CFC7EF918D691BE00C5C47A /* DiscogsImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscogsImage.m; sourceTree = "<group>"; };
 		B2EAD254A1364322B3E87ECB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +127,10 @@
 				8CE676D718CD46CA0075140B /* Profile.m */,
 				8C887B4918CEB3840046ADD8 /* Wantlist.h */,
 				8C887B4A18CEB3840046ADD8 /* Wantlist.m */,
+				8CFC7EF018D6401000C5C47A /* Release.h */,
+				8CFC7EF118D6401000C5C47A /* Release.m */,
+				8CFC7EF818D691BD00C5C47A /* DiscogsImage.h */,
+				8CFC7EF918D691BE00C5C47A /* DiscogsImage.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,6 +147,9 @@
 				8CB5D96618CE5268002D9BE9 /* BarScanViewController.h */,
 				8CB5D96718CE5268002D9BE9 /* BarScanViewController.m */,
 				8CB5D96818CE5268002D9BE9 /* BarScanViewController.xib */,
+				8CFC7EF318D685FC00C5C47A /* WantlistViewController.h */,
+				8CFC7EF418D685FC00C5C47A /* WantlistViewController.m */,
+				8CFC7EF518D685FC00C5C47A /* WantlistViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -256,7 +274,7 @@
 		8C40FFE0186A0412007A763C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = ric;
 				TargetAttributes = {
 					8C400002186A0412007A763C = {
@@ -297,6 +315,7 @@
 			files = (
 				8CB5D96A18CE5268002D9BE9 /* BarScanViewController.xib in Resources */,
 				8C40FFF6186A0412007A763C /* InfoPlist.strings in Resources */,
+				8CFC7EF718D685FC00C5C47A /* WantlistViewController.xib in Resources */,
 				8C40FFFE186A0412007A763C /* Images.xcassets in Resources */,
 				8C01299118B03B4600FABB64 /* HomeViewController.xib in Resources */,
 				8CB6A74C18C3D92C003A4CF0 /* MenuViewController.xib in Resources */,
@@ -347,11 +366,14 @@
 				8C01298B18B02F9400FABB64 /* User.m in Sources */,
 				8CB6A74B18C3D92C003A4CF0 /* MenuViewController.m in Sources */,
 				8CB5D96918CE5268002D9BE9 /* BarScanViewController.m in Sources */,
+				8CFC7EFA18D691BE00C5C47A /* DiscogsImage.m in Sources */,
 				8C40FFFC186A0412007A763C /* AppDelegate.m in Sources */,
 				8C01298A18B02F9400FABB64 /* DiscogsClient.m in Sources */,
 				8C01299018B03B4600FABB64 /* HomeViewController.m in Sources */,
 				8CE676D818CD46CA0075140B /* Profile.m in Sources */,
 				8C40FFF8186A0412007A763C /* main.m in Sources */,
+				8CFC7EF618D685FC00C5C47A /* WantlistViewController.m in Sources */,
+				8CFC7EF218D6401000C5C47A /* Release.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +419,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -437,7 +458,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -501,7 +521,6 @@
 		8C400018186A0412007A763C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Disclient.app/Disclient";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -524,7 +543,6 @@
 		8C400019186A0412007A763C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Disclient.app/Disclient";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

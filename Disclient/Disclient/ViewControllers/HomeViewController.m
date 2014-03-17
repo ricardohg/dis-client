@@ -75,7 +75,6 @@
                     puts("gravatarloaded");
                 }];
                 
-                [self loadWantlist];
             }];
             
         } else {
@@ -88,13 +87,6 @@
 - (IBAction)authPressed:(id)sender {
     [User authenticateUserWithBlock:^(AFOAuth1Token *token, NSError *error) {
         [[User currentUser] setToken:token];
-    }];
-}
-
--(void)loadWantlist {
-    User * currentUser = [User currentUser];
-    [Wantlist wantlistForUser:currentUser.profile.userName withBlock:^(NSArray *profile, NSError *error) {
-        
     }];
 }
 
