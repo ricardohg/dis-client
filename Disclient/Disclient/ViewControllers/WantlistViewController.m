@@ -17,6 +17,7 @@
 
 @interface WantlistViewController () <UITableViewDataSource,UITableViewDelegate> {
     NSArray * wantlistArray;
+    UIRefreshControl * refresh;
 }
 
 @end
@@ -46,16 +47,36 @@
 {
     [super viewDidLoad];
     
+    refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"updating data"];
+    
+    [refresh addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+    
+    [wantListTableView addSubview:refresh];
+    
     wantListTableView.delegate = self;
     wantListTableView.dataSource = self;
+    
+    [self loadWantList];
+    
+}
+
+-(void)loadWantList {
     
     User * user = [User currentUser];
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     [Wantlist wantlistForUser:user.profile.userName withBlock:^(NSArray *wantlist, NSError *error) {
         [SVProgressHUD dismiss];
         wantlistArray = wantlist;
+        [refresh endRefreshing];
         [wantListTableView reloadData];
     }];
+
+    
+}
+
+-(void)handleRefresh:(id)sender {
+    [self loadWantList];
 }
 
 #pragma mark - tableview
