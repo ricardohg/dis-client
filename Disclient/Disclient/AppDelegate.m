@@ -20,6 +20,8 @@
     HomeViewController * hvc = [[HomeViewController alloc] init];
     MenuViewController * mvc = [[MenuViewController alloc] init];
     UINavigationController * nvc = [[UINavigationController alloc] initWithRootViewController:hvc];
+    
+    nvc.navigationBar.barTintColor = [UIColor colorWithRed:241.0/255.0 green:189.0/255.0 blue:48.0/255.0 alpha:1];
     MMDrawerController * mdc = [[MMDrawerController alloc] initWithCenterViewController:nvc leftDrawerViewController:mvc];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

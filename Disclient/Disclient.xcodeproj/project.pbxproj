@@ -24,6 +24,10 @@
 		8C40FFF8186A0412007A763C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C40FFF7186A0412007A763C /* main.m */; };
 		8C40FFFC186A0412007A763C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C40FFFB186A0412007A763C /* AppDelegate.m */; };
 		8C40FFFE186A0412007A763C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C40FFFD186A0412007A763C /* Images.xcassets */; };
+		8C6D9F2E18DFAA190024A07A /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9F2A18DFAA190024A07A /* segoeui.ttf */; };
+		8C6D9F2F18DFAA190024A07A /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9F2B18DFAA190024A07A /* segoeuib.ttf */; };
+		8C6D9F3018DFAA190024A07A /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9F2C18DFAA190024A07A /* segoeuii.ttf */; };
+		8C6D9F3118DFAA190024A07A /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9F2D18DFAA190024A07A /* segoeuil.ttf */; };
 		8C887B4B18CEB3840046ADD8 /* Wantlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C887B4A18CEB3840046ADD8 /* Wantlist.m */; };
 		8CB5D96918CE5268002D9BE9 /* BarScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5D96718CE5268002D9BE9 /* BarScanViewController.m */; };
 		8CB5D96A18CE5268002D9BE9 /* BarScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB5D96818CE5268002D9BE9 /* BarScanViewController.xib */; };
@@ -71,6 +75,10 @@
 		8C40FFFA186A0412007A763C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8C40FFFB186A0412007A763C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8C40FFFD186A0412007A763C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8C6D9F2A18DFAA190024A07A /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeui.ttf; path = Fonts/segoeui.ttf; sourceTree = "<group>"; };
+		8C6D9F2B18DFAA190024A07A /* segoeuib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeuib.ttf; path = Fonts/segoeuib.ttf; sourceTree = "<group>"; };
+		8C6D9F2C18DFAA190024A07A /* segoeuii.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeuii.ttf; path = Fonts/segoeuii.ttf; sourceTree = "<group>"; };
+		8C6D9F2D18DFAA190024A07A /* segoeuil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeuil.ttf; path = Fonts/segoeuil.ttf; sourceTree = "<group>"; };
 		8C887B4918CEB3840046ADD8 /* Wantlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wantlist.h; sourceTree = "<group>"; };
 		8C887B4A18CEB3840046ADD8 /* Wantlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wantlist.m; sourceTree = "<group>"; };
 		8CB5D96618CE5268002D9BE9 /* BarScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarScanViewController.h; path = ViewControllers/BarScanViewController.h; sourceTree = "<group>"; };
@@ -207,6 +215,7 @@
 		8C40FFF1186A0412007A763C /* Disclient */ = {
 			isa = PBXGroup;
 			children = (
+				8C6D9F2918DA825A0024A07A /* Fonts */,
 				8C01298C18B03ADF00FABB64 /* ViewControllers */,
 				8C01298518B02F9400FABB64 /* Models */,
 				8C40FFFA186A0412007A763C /* AppDelegate.h */,
@@ -226,6 +235,17 @@
 				8C40FFF9186A0412007A763C /* Disclient-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C6D9F2918DA825A0024A07A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8C6D9F2A18DFAA190024A07A /* segoeui.ttf */,
+				8C6D9F2B18DFAA190024A07A /* segoeuib.ttf */,
+				8C6D9F2C18DFAA190024A07A /* segoeuii.ttf */,
+				8C6D9F2D18DFAA190024A07A /* segoeuil.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,8 +335,12 @@
 			files = (
 				8CB5D96A18CE5268002D9BE9 /* BarScanViewController.xib in Resources */,
 				8C40FFF6186A0412007A763C /* InfoPlist.strings in Resources */,
+				8C6D9F2E18DFAA190024A07A /* segoeui.ttf in Resources */,
+				8C6D9F2F18DFAA190024A07A /* segoeuib.ttf in Resources */,
 				8CFC7EF718D685FC00C5C47A /* WantlistViewController.xib in Resources */,
 				8C40FFFE186A0412007A763C /* Images.xcassets in Resources */,
+				8C6D9F3018DFAA190024A07A /* segoeuii.ttf in Resources */,
+				8C6D9F3118DFAA190024A07A /* segoeuil.ttf in Resources */,
 				8C01299118B03B4600FABB64 /* HomeViewController.xib in Resources */,
 				8CB6A74C18C3D92C003A4CF0 /* MenuViewController.xib in Resources */,
 			);

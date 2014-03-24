@@ -64,6 +64,7 @@ typedef NS_ENUM(NSInteger, UITableViewSection) {
     }
     
     cell.textLabel.text = sectionsArray[indexPath.row];
+    cell.textLabel.font = [UIFont fontWithName:@"SegoeUI-Light" size:17.0];
     
     return cell;
 
