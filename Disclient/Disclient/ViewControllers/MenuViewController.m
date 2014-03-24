@@ -12,10 +12,12 @@
 #import "WantlistViewController.h"
 #import <UIViewController+MMDrawerController.h>
 
-typedef NS_ENUM(NSInteger, UITableViewSection) {
-    UITableViewProfile,
-    UITableViewWantList,
-    UITableViewScanIt
+typedef NS_ENUM(NSInteger, MenuTableViewSection) {
+    MenuTableViewProfile,
+    MenuTableViewWantList,
+    MenuTableViewCollection,
+    MenuTableViewSearch,
+    MenuTableViewScanIt
 };
 
 @interface MenuViewController () <UITableViewDataSource,UITableViewDelegate>
@@ -42,10 +44,11 @@ typedef NS_ENUM(NSInteger, UITableViewSection) {
     menuTableView.delegate = self;
     menuTableView.dataSource = self;
     
-    sectionsArray = @[@"Profile",@"Wantlist", @"Scan it!"];
+    sectionsArray = @[@"Profile",@"Wantlist",@"Collection",@"Search", @"Scan it!"];
+    
 }
 
-#pragma mark
+#pragma mark - Table View
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return sectionsArray.count;
@@ -75,20 +78,20 @@ typedef NS_ENUM(NSInteger, UITableViewSection) {
     
     switch (indexPath.row) {
             
-        case UITableViewScanIt: {
+        case MenuTableViewScanIt: {
             BarScanViewController * bsvc = [[BarScanViewController alloc] init];
             UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:bsvc];
             [self.mm_drawerController setCenterViewController:nav];
             
         } break;
             
-        case UITableViewProfile: {
+        case MenuTableViewProfile: {
             HomeViewController * hvc = [[HomeViewController alloc] init];
             UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:hvc];
             [self.mm_drawerController setCenterViewController:nav];
         } break;
             
-        case UITableViewWantList: {
+        case MenuTableViewWantList: {
             WantlistViewController * wvc = [[WantlistViewController alloc] init];
             UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:wvc];
             [self.mm_drawerController setCenterViewController:nav];
