@@ -72,13 +72,6 @@
                 locationLabel.font = [UIFont fontWithName:@"SegoeUI-Light" size:17.0];
                 
                 
-                gravatarImageView.email = profile.email;
-                gravatarImageView.rating = GravatarRatingPG;
-                gravatarImageView.size = 160;
-                [gravatarImageView loadGravatar:^{
-                    puts("gravatarloaded");
-                }];
-                
             }];
             
         } else {
