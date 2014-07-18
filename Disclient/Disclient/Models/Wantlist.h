@@ -18,6 +18,9 @@
 @property (nonatomic,strong) NSString * thumbnailString;
 @property (nonatomic,strong) NSNumber * year;
 
+@property (nonatomic,strong) NSArray * artists;
+@property (nonatomic,strong) NSArray * labels;
+
 -(id)initWithData:(NSDictionary*)data;
 
 +(void)wantlistForUser:(NSString*)user withBlock:(void(^)(NSArray * wantlist, NSError * error))block;

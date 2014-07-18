@@ -25,6 +25,23 @@
         self.title = basicInformation[@"title"];
         self.thumbnailString = basicInformation[@"thumb"];
         self.year = basicInformation[@"year"];
+        
+        NSMutableArray * artists = [NSMutableArray array];
+        
+        for (NSDictionary * artist in basicInformation[@"artists"]) {
+            [artists addObject:artist[@"name"]];
+        }
+        
+        self.artists = artists;
+        
+        NSMutableArray * labels = [NSMutableArray array];
+        
+        for (NSDictionary * label in basicInformation[@"labels"]) {
+            [labels addObject:label[@"name"]];
+        }
+        
+        self.labels = labels;
+        
     }
     
     return self;

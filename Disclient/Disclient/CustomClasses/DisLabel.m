@@ -27,13 +27,13 @@ enum GothamStyle {
         case kRegular:
             self.font = [UIFont fontWithName:@"SegoeUI" size:pointSize];
             break;
-            case kItalic:
+        case kItalic:
             self.font = [UIFont fontWithName:@"SegoeUI-Italic" size:pointSize];
             break;
-            case kLight:
+        case kLight:
             self.font = [UIFont fontWithName:@"SegoeUI-Light" size:pointSize];
             break;
-            case kBold:
+        case kBold:
             self.font = [UIFont fontWithName:@"SegoeUI-Bold" size:pointSize];
         default:
             break;
