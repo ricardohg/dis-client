@@ -8,8 +8,6 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "BarScanViewController.h"
-#import <MMDrawerBarButtonItem.h>
-#import <UIViewController+MMDrawerController.h>
 
 @interface BarScanViewController () <AVCaptureMetadataOutputObjectsDelegate>
 {
@@ -31,18 +29,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        MMDrawerBarButtonItem * leftButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPressed:)];
-        self.navigationItem.leftBarButtonItem = leftButtonItem;
         self.title = @"Scan it!";
         
     }
     return self;
-}
-
--(void)leftButtonPressed:(id)sender {
-    
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-    
 }
 
 - (void)viewDidLoad

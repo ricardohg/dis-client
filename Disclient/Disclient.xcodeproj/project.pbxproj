@@ -38,8 +38,6 @@
 		8C887B4B18CEB3840046ADD8 /* Wantlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C887B4A18CEB3840046ADD8 /* Wantlist.m */; };
 		8CB5D96918CE5268002D9BE9 /* BarScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5D96718CE5268002D9BE9 /* BarScanViewController.m */; };
 		8CB5D96A18CE5268002D9BE9 /* BarScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB5D96818CE5268002D9BE9 /* BarScanViewController.xib */; };
-		8CB6A74B18C3D92C003A4CF0 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB6A74918C3D92C003A4CF0 /* MenuViewController.m */; };
-		8CB6A74C18C3D92C003A4CF0 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */; };
 		8CE676D818CD46CA0075140B /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE676D718CD46CA0075140B /* Profile.m */; };
 		8CFC7EF218D6401000C5C47A /* Release.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF118D6401000C5C47A /* Release.m */; };
 		8CFC7EF618D685FC00C5C47A /* WantlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF418D685FC00C5C47A /* WantlistViewController.m */; };
@@ -58,7 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2483A0CDCD2A4D23AE059EA2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8816C9547F367285297B47CB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8C01298618B02F9400FABB64 /* DiscogsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscogsClient.h; sourceTree = "<group>"; };
 		8C01298718B02F9400FABB64 /* DiscogsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscogsClient.m; sourceTree = "<group>"; };
 		8C01298818B02F9400FABB64 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -102,9 +100,6 @@
 		8CB5D96618CE5268002D9BE9 /* BarScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarScanViewController.h; path = ViewControllers/BarScanViewController.h; sourceTree = "<group>"; };
 		8CB5D96718CE5268002D9BE9 /* BarScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarScanViewController.m; path = ViewControllers/BarScanViewController.m; sourceTree = "<group>"; };
 		8CB5D96818CE5268002D9BE9 /* BarScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BarScanViewController.xib; path = ViewControllers/BarScanViewController.xib; sourceTree = "<group>"; };
-		8CB6A74818C3D92C003A4CF0 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = ViewControllers/MenuViewController.h; sourceTree = "<group>"; };
-		8CB6A74918C3D92C003A4CF0 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = ViewControllers/MenuViewController.m; sourceTree = "<group>"; };
-		8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = ViewControllers/MenuViewController.xib; sourceTree = "<group>"; };
 		8CE676D618CD46CA0075140B /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		8CE676D718CD46CA0075140B /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		8CFC7EF018D6401000C5C47A /* Release.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Release.h; sourceTree = "<group>"; };
@@ -114,6 +109,7 @@
 		8CFC7EF518D685FC00C5C47A /* WantlistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WantlistViewController.xib; path = ViewControllers/WantlistViewController.xib; sourceTree = "<group>"; };
 		8CFC7EF818D691BD00C5C47A /* DiscogsImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscogsImage.h; sourceTree = "<group>"; };
 		8CFC7EF918D691BE00C5C47A /* DiscogsImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscogsImage.m; sourceTree = "<group>"; };
+		9C2091FF261BFAFA8366832A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B2EAD254A1364322B3E87ECB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86BEC7448E53BD92399F13C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8816C9547F367285297B47CB /* Pods.debug.xcconfig */,
+				9C2091FF261BFAFA8366832A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8C01298518B02F9400FABB64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,9 +172,6 @@
 				8C01298D18B03B4600FABB64 /* HomeViewController.h */,
 				8C01298E18B03B4600FABB64 /* HomeViewController.m */,
 				8C01298F18B03B4600FABB64 /* HomeViewController.xib */,
-				8CB6A74818C3D92C003A4CF0 /* MenuViewController.h */,
-				8CB6A74918C3D92C003A4CF0 /* MenuViewController.m */,
-				8CB6A74A18C3D92C003A4CF0 /* MenuViewController.xib */,
 				8CB5D96618CE5268002D9BE9 /* BarScanViewController.h */,
 				8CB5D96718CE5268002D9BE9 /* BarScanViewController.m */,
 				8CB5D96818CE5268002D9BE9 /* BarScanViewController.xib */,
@@ -211,7 +213,7 @@
 				8C40000A186A0412007A763C /* DisclientTests */,
 				8C40FFEA186A0412007A763C /* Frameworks */,
 				8C40FFE9186A0412007A763C /* Products */,
-				2483A0CDCD2A4D23AE059EA2 /* Pods.xcconfig */,
+				86BEC7448E53BD92399F13C7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -390,7 +392,6 @@
 				8C6D9F3618DFB6DB0024A07A /* SearchViewController.xib in Resources */,
 				8C6D9F3118DFAA190024A07A /* segoeuil.ttf in Resources */,
 				8C01299118B03B4600FABB64 /* HomeViewController.xib in Resources */,
-				8CB6A74C18C3D92C003A4CF0 /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +410,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		544B9F28668749D2B00310C7 /* Check Pods Manifest.lock */ = {
@@ -437,7 +438,6 @@
 				8C887B4B18CEB3840046ADD8 /* Wantlist.m in Sources */,
 				8C6D9F3518DFB6DB0024A07A /* SearchViewController.m in Sources */,
 				8C01298B18B02F9400FABB64 /* User.m in Sources */,
-				8CB6A74B18C3D92C003A4CF0 /* MenuViewController.m in Sources */,
 				8CB5D96918CE5268002D9BE9 /* BarScanViewController.m in Sources */,
 				8C4616101979BF0C000087C7 /* DisLabel.m in Sources */,
 				8CFC7EFA18D691BE00C5C47A /* DiscogsImage.m in Sources */,
@@ -565,7 +565,7 @@
 		};
 		8C400015186A0412007A763C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2483A0CDCD2A4D23AE059EA2 /* Pods.xcconfig */;
+			baseConfigurationReference = 8816C9547F367285297B47CB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -581,7 +581,7 @@
 		};
 		8C400016186A0412007A763C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2483A0CDCD2A4D23AE059EA2 /* Pods.xcconfig */;
+			baseConfigurationReference = 9C2091FF261BFAFA8366832A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

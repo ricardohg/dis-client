@@ -7,9 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import <MMDrawerBarButtonItem.h>
-#import <UIViewController+MMDrawerController.h>
-#import <SVProgressHUD.h>
 #import "User.h"
 
 #import "Wantlist.h"
@@ -25,18 +22,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        MMDrawerBarButtonItem * leftButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPressed:)];
-        self.navigationItem.leftBarButtonItem = leftButtonItem;
         self.title = @"Profile";
         
     }
     return self;
-}
-
--(void)leftButtonPressed:(id)sender {
-    
-     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-
 }
 
 - (void)viewDidLoad
@@ -50,13 +39,11 @@
 }
 
 -(void)loadProfile {
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
     [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
         if (!error) {
             
             [[User currentUser] userProfileForUserName:user.userName withBlock:^(Profile *profile, NSError *error) {
-                [SVProgressHUD dismiss];
                 
                 //store profile in current user
                 
