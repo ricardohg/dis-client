@@ -7,14 +7,11 @@
 //
 
 #import "WantlistViewController.h"
-#import <MMDrawerBarButtonItem.h>
-#import <UIViewController+MMDrawerController.h>
 #import "Wantlist.h"
 #import "User.h"
 #import "DiscogsClient.h"
 #import "DiscogsImage.h"
 #import "ReleaseTableViewCell.h"
-#import <SVProgressHUD.h>
 
 @interface WantlistViewController () <UITableViewDataSource,UITableViewDelegate> {
     NSArray * wantlistArray;
@@ -30,19 +27,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        MMDrawerBarButtonItem * leftButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPressed:)];
-        self.navigationItem.leftBarButtonItem = leftButtonItem;
         self.title = @"Wantlist";
 
     }
     return self;
 }
 
--(void)leftButtonPressed:(id)sender {
-    
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-    
-}
 
 - (void)viewDidLoad
 {
@@ -67,9 +57,7 @@
 -(void)loadWantList {
     
     User * user = [User currentUser];
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     [Wantlist wantlistForUser:user.profile.userName withBlock:^(NSArray *wantlist, NSError *error) {
-        [SVProgressHUD dismiss];
         wantlistArray = wantlist;
         [refresh endRefreshing];
         [wantListTableView reloadData];
