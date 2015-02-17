@@ -8,19 +8,22 @@
 
 #import "DiscogsClient.h"
 
+static NSString * const BASEURL = @"http://api.discogs.com/oauth/";
+static NSString * const OAUTHKEY = @"lxkCGGkXkHSXkyCOJAcA";
+static NSString * const OAUTHSECRET = @"ichoJaHRehRQZtSOWmhnvYSJRuqxsPhx";
+
+static DiscogsClient * sharedClient;
+
 @implementation DiscogsClient
 
-+(DiscogsClient*)client {
-    
-    static DiscogsClient * _client;
++ (DiscogsClient*)sharedClient {
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _client = [[DiscogsClient alloc] initWithBaseURL:[NSURL URLWithString:BASEURL] key:OAUTHKEY secret:OAUTHSECRET];
+        sharedClient = [[DiscogsClient alloc] initWithBaseURL:[NSURL URLWithString:BASEURL] key:OAUTHKEY secret:OAUTHSECRET];
     });
     
-    return _client;
-    
+    return sharedClient;
 }
 
 
