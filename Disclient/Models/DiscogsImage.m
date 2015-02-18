@@ -14,7 +14,7 @@
 
 +(void)imageForUrl:(NSString *)imageUrl withBlock:(void (^)(UIImage *, NSError *))block {
     
-    DiscogsClient * client = [DiscogsClient client];
+    DiscogsClient * client = [DiscogsClient sharedClient];
     [client getPath:imageUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         UIImage * image = [UIImage imageWithData:responseObject];
         if (block) {

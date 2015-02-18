@@ -34,7 +34,7 @@
 
 +(void)authenticateUserWithBlock:(void (^)(AFOAuth1Token *, NSError *))block {
     
-    DiscogsClient *authClient = [DiscogsClient client];
+    DiscogsClient *authClient = [DiscogsClient sharedClient];
     
     // Your application will be sent to the background until the user authenticates, and then the app will be brought back using the callback URL
     [authClient authorizeUsingOAuthWithRequestTokenPath:@"http://api.discogs.com/oauth/request_token" userAuthorizationPath:@"http://www.discogs.com/oauth/authorize" callbackURL:[NSURL URLWithString:@"success://success"] accessTokenPath:@"http://api.discogs.com/oauth/access_token"  accessMethod:@"GET" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
@@ -54,7 +54,7 @@
 
 -(void)getUserInfoWithBlock:(void (^)(User *, NSError *))block {
     
-    DiscogsClient * client = [DiscogsClient client];
+    DiscogsClient * client = [DiscogsClient sharedClient];
     
     AFOAuth1Token * token = [AFOAuth1Token retrieveCredentialWithIdentifier:@"ACCESS_TOKEN"];
     
@@ -79,7 +79,7 @@
 
 -(void)userProfileForUserName:(NSString *)user withBlock:(void (^)(Profile *, NSError *))block {
     
-    DiscogsClient * client = [DiscogsClient client];
+    DiscogsClient * client = [DiscogsClient sharedClient];
     NSString * path = [NSString stringWithFormat:@"http://api.discogs.com/users/%@",user];
     [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error = nil;

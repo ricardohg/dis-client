@@ -38,7 +38,7 @@
 
 }
 
--(void)loadProfile {
+- (void)loadProfile {
     
     [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
         if (!error) {

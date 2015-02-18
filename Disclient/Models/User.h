@@ -18,14 +18,14 @@
 @property (nonatomic,strong) Profile * profile;
 
 
--(id)initWithData:(NSDictionary*)data;
+- (id)initWithData:(NSDictionary*)data;
 
-+(User*)currentUser;
++ (User*)currentUser;
 
-+(void)authenticateUserWithBlock:(void(^)(AFOAuth1Token * token, NSError *error))block;
++ (void)authenticateUserWithBlock:(void(^)(AFOAuth1Token * token, NSError *error))block;
 
--(void)getUserInfoWithBlock:(void(^)(User * user, NSError * error))block;
+- (void)getUserInfoWithBlock:(void(^)(User * user, NSError * error))block;
 
--(void)userProfileForUserName:(NSString*)user withBlock:(void(^)(Profile * profile, NSError * error))block;
+- (void)userProfileForUserName:(NSString*)user withBlock:(void(^)(Profile * profile, NSError * error))block;
 
 @end

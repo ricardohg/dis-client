@@ -50,7 +50,7 @@
 
 +(void)wantlistForUser:(NSString *)user withBlock:(void (^)(NSArray *, NSError *))block {
     
-    DiscogsClient * client = [DiscogsClient client];
+    DiscogsClient * client = [DiscogsClient sharedClient];
     NSString * path = [NSString stringWithFormat:@"http://api.discogs.com/users/%@/wants",user];
     [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error = nil;
