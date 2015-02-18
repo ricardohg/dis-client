@@ -9,9 +9,15 @@
 #import "User.h"
 #import "DiscogsClient.h"
 
+static NSString * const requestTokenPathString = @"http://api.discogs.com/oauth/request_token";
+static NSString * const userAuthorizationPathString = @"http://www.discogs.com/oauth/authorize";
+static NSString * const accessTokenPathString = @"http://api.discogs.com/oauth/access_token";
+static NSString * const callBackUrlString = @"success://success";
+static NSString * const accessMethodString = @"GET";
+
 @implementation User
 
--(id)initWithData:(NSDictionary *)data {
+- (id)initWithData:(NSDictionary *)data {
     self = [super init];
     if (self) {
         self.userId = data[@"id"];
@@ -21,7 +27,7 @@
     return self;
 }
 
-+(User *)currentUser {
++ (User *)currentUser {
     static User * _currentUser;
     
     static dispatch_once_t onceToken;
@@ -37,7 +43,7 @@
     DiscogsClient *authClient = [DiscogsClient sharedClient];
     
     // Your application will be sent to the background until the user authenticates, and then the app will be brought back using the callback URL
-    [authClient authorizeUsingOAuthWithRequestTokenPath:@"http://api.discogs.com/oauth/request_token" userAuthorizationPath:@"http://www.discogs.com/oauth/authorize" callbackURL:[NSURL URLWithString:@"success://success"] accessTokenPath:@"http://api.discogs.com/oauth/access_token"  accessMethod:@"GET" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
+    [authClient authorizeUsingOAuthWithRequestTokenPath:requestTokenPathString userAuthorizationPath:userAuthorizationPathString callbackURL:[NSURL URLWithString:callBackUrlString] accessTokenPath:accessTokenPathString  accessMethod:accessMethodString scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
         if (block) {
             if ([AFOAuth1Token storeCredential:accessToken withIdentifier:@"ACCESS_TOKEN"]) {
                 puts("success");
@@ -52,7 +58,7 @@
     
 }
 
--(void)getUserInfoWithBlock:(void (^)(User *, NSError *))block {
+- (void)getUserInfoWithBlock:(void (^)(User *, NSError *))block {
     
     DiscogsClient * client = [DiscogsClient sharedClient];
     
@@ -77,7 +83,7 @@
 
 }
 
--(void)userProfileForUserName:(NSString *)user withBlock:(void (^)(Profile *, NSError *))block {
+- (void)userProfileForUserName:(NSString *)user withBlock:(void (^)(Profile *, NSError *))block {
     
     DiscogsClient * client = [DiscogsClient sharedClient];
     NSString * path = [NSString stringWithFormat:@"http://api.discogs.com/users/%@",user];
