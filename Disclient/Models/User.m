@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "DiscogsClient.h"
+#import <MTLJSONAdapter.h> 
 
 static NSString * const requestTokenPathString = @"http://api.discogs.com/oauth/request_token";
 static NSString * const userAuthorizationPathString = @"http://www.discogs.com/oauth/authorize";
@@ -38,7 +39,7 @@ static NSString * const accessMethodString = @"GET";
     return _currentUser;
 }
 
-+(void)authenticateUserWithBlock:(void (^)(AFOAuth1Token *, NSError *))block {
++ (void)authenticateUserWithBlock:(void (^)(AFOAuth1Token *, NSError *))block {
     
     DiscogsClient *authClient = [DiscogsClient sharedClient];
     
@@ -90,11 +91,10 @@ static NSString * const accessMethodString = @"GET";
     [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error = nil;
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
-        Profile * profile = [[Profile alloc] initWithData:json];
+        Profile * profile = [MTLJSONAdapter modelOfClass:[Profile class] fromJSONDictionary:json error:nil];
         if (block) {
             block(profile,error);
         }
-    
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         puts("no");
     }];

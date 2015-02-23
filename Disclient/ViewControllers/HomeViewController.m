@@ -32,13 +32,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-
     [self loadProfile];
 
 }
 
-- (void)loadProfile {
+- (void)loadProfile
+{
     
     [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
         if (!error) {
@@ -68,16 +67,12 @@
     }];
 
 }
-- (IBAction)authPressed:(id)sender {
+
+- (IBAction)authPressed:(id)sender
+{
     [User authenticateUserWithBlock:^(AFOAuth1Token *token, NSError *error) {
         [[User currentUser] setToken:token];
     }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
