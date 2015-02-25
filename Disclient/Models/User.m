@@ -8,16 +8,9 @@
 
 #import "User.h"
 #import <MTLJSONAdapter.h> 
+#import <NSValueTransformer+MTLPredefinedTransformerAdditions.h>
 
 @implementation User
-
-+ (NSDictionary *)JSONKeyPathsByPropertyKey
-{
-    return @{
-             @"userId":@"id",
-             @"userName":@"username"
-             };
-}
 
 + (User *)currentUser {
     static User * _currentUser;
@@ -27,6 +20,20 @@
     });
     
     return _currentUser;
+}
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return @{
+             @"userId":@"id",
+             @"userName":@"username",
+             @"resourceUrl":@"resource_url"
+             };
+}
+
++ (NSValueTransformer *)resourceUrlJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 @end

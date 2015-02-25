@@ -19,6 +19,7 @@ static NSString * const callBackUrlString = @"success://success";
 static NSString * const accessMethodString = @"GET";
 
 static NSString * const ACCESS_TOKEN_IDENTIFIER = @"ACCESS_TOKEN";
+
 @implementation User (API)
 
 + (void)authenticateUserWithBlock:(void (^)(AFOAuth1Token *token, NSError *error))block {
@@ -49,14 +50,11 @@ static NSString * const ACCESS_TOKEN_IDENTIFIER = @"ACCESS_TOKEN";
     
     [client setAccessToken:token];
     
-    [client getPath:identityPathString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSError *error = nil;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
+    [client getPath:identityPathString parameters:nil success:^(AFHTTPRequestOperation *operation, id json) {
         
         User * user = [MTLJSONAdapter modelOfClass:[User class] fromJSONDictionary:json error:nil];
         if (block) {
-            block(user,error);
+            block(user,nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
@@ -70,12 +68,11 @@ static NSString * const ACCESS_TOKEN_IDENTIFIER = @"ACCESS_TOKEN";
     
     DiscogsClient * client = [DiscogsClient sharedClient];
     NSString * path = [NSString stringWithFormat:@"%@/%@",usersPathString,user];
-    [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSError *error = nil;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
+    [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id json) {
+        
         Profile * profile = [MTLJSONAdapter modelOfClass:[Profile class] fromJSONDictionary:json error:nil];
         if (block) {
-            block(profile,error);
+            block(profile,nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
