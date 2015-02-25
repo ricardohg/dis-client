@@ -8,7 +8,7 @@
 
 #import "DiscogsClient.h"
 
-static NSString * const BASEURL = @"http://api.discogs.com/oauth/";
+static NSString * const BASEURL = @"http://api.discogs.com/";
 static NSString * const OAUTHKEY = @"lxkCGGkXkHSXkyCOJAcA";
 static NSString * const OAUTHSECRET = @"ichoJaHRehRQZtSOWmhnvYSJRuqxsPhx";
 

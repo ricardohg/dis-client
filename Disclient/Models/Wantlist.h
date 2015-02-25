@@ -21,8 +21,8 @@
 @property (nonatomic,strong) NSArray * artists;
 @property (nonatomic,strong) NSArray * labels;
 
--(id)initWithData:(NSDictionary*)data;
+- (id)initWithData:(NSDictionary*)data;
 
-+(void)wantlistForUser:(NSString*)user withBlock:(void(^)(NSArray * wantlist, NSError * error))block;
++ (void)wantlistForUser:(NSString*)user withBlock:(void(^)(NSArray * wantlist, NSError * error))block;
 
 @end
