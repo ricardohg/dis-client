@@ -12,6 +12,8 @@
 
 @implementation Profile
 
+#pragma mark - class methods
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{

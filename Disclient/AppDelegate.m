@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AFOAuth1Client.h>
+#import <AFNetworkActivityIndicatorManager.h>
 #import "HomeViewController.h"
 #import "WantlistViewController.h"
 #import "SearchViewController.h"
@@ -16,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     UITabBarController * tabBarController = [[UITabBarController alloc] init];
     HomeViewController * hvc = [[HomeViewController alloc] init];
     WantlistViewController * wvc = [[WantlistViewController alloc] init];

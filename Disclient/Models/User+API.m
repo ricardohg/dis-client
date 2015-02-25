@@ -22,6 +22,8 @@ static NSString * const ACCESS_TOKEN_IDENTIFIER = @"ACCESS_TOKEN";
 
 @implementation User (API)
 
+#pragma mark - class methods
+
 + (void)authenticateUserWithBlock:(void (^)(AFOAuth1Token *token, NSError *error))block {
     
     DiscogsClient *authClient = [DiscogsClient sharedClient];
@@ -30,9 +32,10 @@ static NSString * const ACCESS_TOKEN_IDENTIFIER = @"ACCESS_TOKEN";
     [authClient authorizeUsingOAuthWithRequestTokenPath:requestTokenPathString userAuthorizationPath:userAuthorizationPathString callbackURL:[NSURL URLWithString:callBackUrlString] accessTokenPath:accessTokenPathString  accessMethod:accessMethodString scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
         if (block) {
             if ([AFOAuth1Token storeCredential:accessToken withIdentifier:ACCESS_TOKEN_IDENTIFIER]) {
-                puts("success");
+                block(accessToken,nil);
+            } else {
+                block(nil,nil);
             }
-            block(accessToken,nil);
         }
     } failure:^(NSError *error) {
         if (block) {
@@ -42,10 +45,12 @@ static NSString * const ACCESS_TOKEN_IDENTIFIER = @"ACCESS_TOKEN";
     
 }
 
+#pragma mark - instance methods
+
 - (void)getUserInfoWithBlock:(void (^)(User *user, NSError *error))block {
     
     DiscogsClient * client = [DiscogsClient sharedClient];
-    
+#warning fix this later
     AFOAuth1Token * token = [AFOAuth1Token retrieveCredentialWithIdentifier:ACCESS_TOKEN_IDENTIFIER];
     
     [client setAccessToken:token];

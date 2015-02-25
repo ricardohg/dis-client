@@ -12,6 +12,8 @@
 
 @implementation User
 
+#pragma mark - class methods
+
 + (User *)currentUser {
     static User * _currentUser;
     static dispatch_once_t onceToken;

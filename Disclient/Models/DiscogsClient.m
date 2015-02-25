@@ -17,6 +17,8 @@ static DiscogsClient * sharedClient;
 
 @implementation DiscogsClient
 
+#pragma mark - class methods
+
 + (DiscogsClient*)sharedClient {
     
     static dispatch_once_t onceToken;

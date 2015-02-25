@@ -13,7 +13,7 @@
 @implementation DiscogsImage
 
 + (void)imageForUrl:(NSString *)imageUrl withBlock:(void (^)(UIImage * image, NSError * error))block {
-    
+#warning fix this
     DiscogsClient * client = [DiscogsClient sharedClient];
     [client getPath:imageUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         UIImage * image = [UIImage imageWithData:responseObject];

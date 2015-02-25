@@ -10,6 +10,7 @@
 #import "User+API.h"
 #import "Profile.h"
 #import "Wantlist.h"
+#import "DiscogsClient.h"
 
 @interface HomeViewController ()
 

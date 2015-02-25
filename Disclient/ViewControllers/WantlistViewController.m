@@ -7,7 +7,7 @@
 //
 
 #import "WantlistViewController.h"
-#import "Wantlist.h"
+#import "Wantlist+API.h"
 #import "User.h"
 #import "DiscogsClient.h"
 #import "DiscogsImage.h"
@@ -57,7 +57,7 @@
 -(void)loadWantList {
     
     User * user = [User currentUser];
-    [Wantlist wantlistForUser:user.profile.userName withBlock:^(NSArray *wantlist, NSError *error) {
+    [Wantlist wantlistForUser:user withBlock:^(NSArray *wantlist, NSError *error) {
         wantlistArray = wantlist;
         [refresh endRefreshing];
         [wantListTableView reloadData];

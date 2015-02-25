@@ -12,6 +12,7 @@
 
 @class AFOAuth1Token;
 @class Profile;
+
 @interface User : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, strong) AFOAuth1Token * token;
@@ -20,6 +21,6 @@
 @property (nonatomic, strong) NSURL * resourceUrl;
 @property (nonatomic, strong) Profile * profile;
 
-+ (User*)currentUser;
++ (User *)currentUser;
 
 @end

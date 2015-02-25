@@ -23,6 +23,4 @@
 
 - (id)initWithData:(NSDictionary*)data;
 
-+ (void)wantlistForUser:(NSString*)user withBlock:(void(^)(NSArray * wantlist, NSError * error))block;
-
 @end
