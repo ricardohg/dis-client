@@ -11,19 +11,19 @@
 
 @interface Profile : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, strong) NSNumber * iD;
-@property (nonatomic, copy) NSString * userName;
-@property (nonatomic, strong) NSURL * resourceUrl;
-@property (nonatomic, strong) NSURL * inventoryUrl;
-@property (nonatomic, strong) NSURL * collectionFolderUrl;
-@property (nonatomic, strong) NSURL * collectionFieldsUrl;
-@property (nonatomic, strong) NSURL * wantlistUrl;
-@property (nonatomic, strong) NSURL * uri;
-@property (nonatomic, copy) NSString * email;
-@property (nonatomic, copy) NSString * profile;
-@property (nonatomic, copy) NSString * homePage;
-@property (nonatomic, copy) NSString * location;
-@property (nonatomic, strong) NSDate * registeredDate;
+@property (nonatomic, strong) NSNumber *iD;
+@property (nonatomic, copy) NSString *userName;
+@property (nonatomic, strong) NSURL *resourceUrl;
+@property (nonatomic, strong) NSURL *inventoryUrl;
+@property (nonatomic, strong) NSURL *collectionFolderUrl;
+@property (nonatomic, strong) NSURL *collectionFieldsUrl;
+@property (nonatomic, strong) NSURL *wantlistUrl;
+@property (nonatomic, strong) NSURL *uri;
+@property (nonatomic, copy) NSString *email;
+@property (nonatomic, copy) NSString *profile;
+@property (nonatomic, copy) NSString *homePage;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic, strong) NSDate *registeredDate;
 @property (nonatomic, assign) NSInteger numLists;
 @property (nonatomic, assign) NSInteger numForSale;
 @property (nonatomic, assign) NSInteger numCollection;
