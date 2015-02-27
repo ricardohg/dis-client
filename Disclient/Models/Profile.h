@@ -13,12 +13,12 @@
 
 @property (nonatomic, strong) NSNumber *iD;
 @property (nonatomic, copy) NSString *userName;
-@property (nonatomic, strong) NSURL *resourceUrl;
-@property (nonatomic, strong) NSURL *inventoryUrl;
-@property (nonatomic, strong) NSURL *collectionFolderUrl;
-@property (nonatomic, strong) NSURL *collectionFieldsUrl;
-@property (nonatomic, strong) NSURL *wantlistUrl;
-@property (nonatomic, strong) NSURL *uri;
+@property (nonatomic, copy) NSString *resourceUrlString;
+@property (nonatomic, copy) NSString *inventoryUrlString;
+@property (nonatomic, copy) NSString *collectionFolderUrlString;
+@property (nonatomic, copy) NSString *collectionFieldsUrlString;
+@property (nonatomic, copy) NSString *wantlistUrlString;
+@property (nonatomic, copy) NSString *uriString;
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, copy) NSString *profile;
 @property (nonatomic, copy) NSString *homePage;

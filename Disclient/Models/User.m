@@ -7,8 +7,7 @@
 //
 
 #import "User.h"
-#import <MTLJSONAdapter.h> 
-#import <NSValueTransformer+MTLPredefinedTransformerAdditions.h>
+#import <MTLJSONAdapter.h>
 
 @implementation User
 
@@ -29,13 +28,8 @@
     return @{
              @"userId":@"id",
              @"userName":@"username",
-             @"resourceUrl":@"resource_url"
+             @"resourceUrlString":@"resource_url"
              };
-}
-
-+ (NSValueTransformer *)resourceUrlJSONTransformer
-{
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 @end

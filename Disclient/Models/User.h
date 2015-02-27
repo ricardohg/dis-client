@@ -18,7 +18,7 @@
 @property (nonatomic, strong) AFOAuth1Token *token;
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, strong) NSNumber *userId;
-@property (nonatomic, strong) NSURL *resourceUrl;
+@property (nonatomic, copy) NSString *resourceUrlString;
 @property (nonatomic, strong) Profile *profile;
 
 + (User *)currentUser;

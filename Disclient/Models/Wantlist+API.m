@@ -24,7 +24,7 @@
         parameters = @{@"page":page,@"per_page":numberOfItems};
     }
     
-    [client getPath:[user.profile.wantlistUrl absoluteString] parameters:parameters success:^(AFHTTPRequestOperation *operation, id json) {
+    [client getPath:user.profile.wantlistUrlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id json) {
         
 #warning add defensive coding here
         NSArray *wantlistArray = json[@"wants"];

@@ -8,7 +8,6 @@
 
 #import "Profile.h"
 #import <MTLValueTransformer.h>
-#import <NSValueTransformer+MTLPredefinedTransformerAdditions.h>
 
 @implementation Profile
 
@@ -21,12 +20,12 @@
              @"userName":@"username",
              @"email":@"email",
              @"profile":@"profile",
-             @"resourceUrl":@"resource_url",
-             @"inventoryUrl":@"inventory_url",
-             @"collectionFolderUrl":@"collection_folders_url",
-             @"collectionFieldsUrl":@"collection_fields_url",
-             @"wantlistUrl":@"wantlist_url",
-             @"uri":@"uri",
+             @"resourceUrlString":@"resource_url",
+             @"inventoryUrlString":@"inventory_url",
+             @"collectionFolderUrlString":@"collection_folders_url",
+             @"collectionFieldsUrlString":@"collection_fields_url",
+             @"wantlistUrlString":@"wantlist_url",
+             @"uriString":@"uri",
              @"homePage":@"home_page",
              @"location":@"location",
              @"registeredDate":@"registered",
@@ -50,35 +49,6 @@
         return [dateFormatter dateFromString:str];
     }];
     
-}
-+ (NSValueTransformer *)resourceUrlJSONTransformer
-{
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-}
-
-+ (NSValueTransformer *)inventoryUrlJSONTransformer
-{
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-}
-
-+ (NSValueTransformer *)collectionFolderUrlJSONTransformer
-{
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-}
-
-+ (NSValueTransformer *)collectionFieldsUrlJSONTransformer
-{
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-}
-
-+ (NSValueTransformer *)wantlistUrlJSONTransformer
-{
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-}
-
-+ (NSValueTransformer *)uriJSONTransformer
-{
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 @end
