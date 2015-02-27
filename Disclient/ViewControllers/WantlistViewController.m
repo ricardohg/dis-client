@@ -54,13 +54,14 @@
     
 }
 
--(void)loadWantList {
+- (void)loadWantList {
     
     User * user = [User currentUser];
-    [Wantlist wantlistForUser:user withBlock:^(NSArray *wantlist, NSError *error) {
-        wantlistArray = wantlist;
+    [Wantlist wantlistForUser:user forPage:@(1) AndNumberOfItems:@(10) withBlock:^(NSArray *awantlistArray, NSError *error) {
+        wantlistArray = awantlistArray;
         [refresh endRefreshing];
         [wantListTableView reloadData];
+    
     }];
 
     

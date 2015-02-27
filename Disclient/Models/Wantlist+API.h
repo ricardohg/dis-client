@@ -12,6 +12,6 @@
 
 @interface Wantlist (API)
 
-+ (void)wantlistForUser:(User *)user withBlock:(void(^)(NSArray *wantlistArray, NSError *error))block;
++ (void)wantlistForUser:(User *)user forPage:(NSNumber *)page AndNumberOfItems:(NSNumber *)numberOfItems withBlock:(void(^)(NSArray *wantlistArray, NSError *error))block;
 
 @end

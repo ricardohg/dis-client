@@ -15,13 +15,19 @@
 
 #pragma mark - class methods
 
-+ (void)wantlistForUser:(User *)user withBlock:(void (^)(NSArray *wantlistArray, NSError *error))block {
++ (void)wantlistForUser:(User *)user forPage:(NSNumber *)page AndNumberOfItems:(NSNumber *)numberOfItems withBlock:(void(^)(NSArray *wantlistArray, NSError *error))block {
     
-    DiscogsClient * client = [DiscogsClient sharedClient];
-    [client getPath:[user.profile.wantlistUrl absoluteString] parameters:nil success:^(AFHTTPRequestOperation *operation, id json) {
+    DiscogsClient *client = [DiscogsClient sharedClient];
+    NSDictionary *parameters = nil;
+    
+    if (page && numberOfItems) {
+        parameters = @{@"page":page,@"per_page":numberOfItems};
+    }
+    
+    [client getPath:[user.profile.wantlistUrl absoluteString] parameters:parameters success:^(AFHTTPRequestOperation *operation, id json) {
         
 #warning add defensive coding here
-        NSArray * wantlistArray = json[@"wants"];
+        NSArray *wantlistArray = json[@"wants"];
         NSMutableArray * responseWantList = [NSMutableArray array];
         
         [wantlistArray enumerateObjectsUsingBlock:^(NSDictionary * obj, NSUInteger idx, BOOL *stop) {
