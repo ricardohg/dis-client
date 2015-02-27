@@ -7,12 +7,10 @@
 //
 
 #import "HomeViewController.h"
-#import <MMDrawerBarButtonItem.h>
-#import <UIViewController+MMDrawerController.h>
-#import <SVProgressHUD.h>
-#import "User.h"
-
+#import "User+API.h"
+#import "Profile.h"
 #import "Wantlist.h"
+#import "DiscogsClient.h"
 
 @interface HomeViewController ()
 
@@ -25,38 +23,27 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        MMDrawerBarButtonItem * leftButtonItem = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPressed:)];
-        self.navigationItem.leftBarButtonItem = leftButtonItem;
         self.title = @"Profile";
         
     }
     return self;
 }
 
--(void)leftButtonPressed:(id)sender {
-    
-     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-
     [self loadProfile];
 
 }
 
--(void)loadProfile {
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+- (void)loadProfile
+{
     
     [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
         if (!error) {
             
             [[User currentUser] userProfileForUserName:user.userName withBlock:^(Profile *profile, NSError *error) {
-                [SVProgressHUD dismiss];
                 
                 //store profile in current user
                 
@@ -81,16 +68,12 @@
     }];
 
 }
-- (IBAction)authPressed:(id)sender {
+
+- (IBAction)authPressed:(id)sender
+{
     [User authenticateUserWithBlock:^(AFOAuth1Token *token, NSError *error) {
         [[User currentUser] setToken:token];
     }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

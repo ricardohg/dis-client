@@ -7,8 +7,6 @@
 //
 
 #import "Wantlist.h"
-#import "DiscogsClient.h"
-#import "User.h"
 
 @implementation Wantlist
 
@@ -47,31 +45,4 @@
     return self;
     
 }
-
-+(void)wantlistForUser:(NSString *)user withBlock:(void (^)(NSArray *, NSError *))block {
-    
-    DiscogsClient * client = [DiscogsClient client];
-    NSString * path = [NSString stringWithFormat:@"http://api.discogs.com/users/%@/wants",user];
-    [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSError *error = nil;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
-        
-        NSArray * wantlistArray = json[@"wants"];
-        NSMutableArray * responseWantList = [NSMutableArray array];
-        
-        [wantlistArray enumerateObjectsUsingBlock:^(NSDictionary * obj, NSUInteger idx, BOOL *stop) {
-            Wantlist * want = [[Wantlist alloc] initWithData:obj];
-            [responseWantList addObject:want];
-        }];
-
-        if (block) {
-            block(responseWantList,error);
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        puts("no");
-    }];
-    
-}
-
 @end
