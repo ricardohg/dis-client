@@ -8,15 +8,13 @@
 
 #import "DiscogsImage.h"
 #import "DiscogsClient.h"
-#import <AFImageRequestOperation.h>
 
 @implementation DiscogsImage
 
 + (void)imageForUrl:(NSString *)imageUrl withBlock:(void (^)(UIImage * image, NSError * error))block {
-#warning fix this
-    DiscogsClient * client = [DiscogsClient sharedClient];
-    [client getPath:imageUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        UIImage * image = [UIImage imageWithData:responseObject];
+    
+    DiscogsClient *client = [DiscogsClient sharedClient];
+    [client getPath:imageUrl parameters:nil success:^(AFHTTPRequestOperation *operation, UIImage *image) {
         if (block) {
             block(image,nil);
         }

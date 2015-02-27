@@ -8,6 +8,7 @@
 
 #import "DiscogsClient.h"
 #import <AFJSONRequestOperation.h>
+#import <AFImageRequestOperation.h>
 
 static NSString * const BASEURL = @"http://api.discogs.com/";
 static NSString * const OAUTHKEY = @"lxkCGGkXkHSXkyCOJAcA";
@@ -19,7 +20,7 @@ static DiscogsClient * sharedClient;
 
 #pragma mark - class methods
 
-+ (DiscogsClient*)sharedClient {
++ (DiscogsClient *)sharedClient {
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -27,6 +28,8 @@ static DiscogsClient * sharedClient;
         [sharedClient setDefaultHeader:@"Accept" value:@"application/json"];
         [sharedClient setParameterEncoding:AFJSONParameterEncoding];
         [sharedClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        [sharedClient registerHTTPOperationClass:[AFImageRequestOperation class]];
+        [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObjects:@"image/jpeg", @"application/x-www-form-urlencoded", nil]];
     });
     
     return sharedClient;

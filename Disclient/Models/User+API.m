@@ -54,7 +54,6 @@ static NSString * const ACCESS_TOKEN_IDENTIFIER = @"ACCESS_TOKEN";
     AFOAuth1Token * token = [AFOAuth1Token retrieveCredentialWithIdentifier:ACCESS_TOKEN_IDENTIFIER];
     
     [client setAccessToken:token];
-    
     [client getPath:identityPathString parameters:nil success:^(AFHTTPRequestOperation *operation, id json) {
         
         User * user = [MTLJSONAdapter modelOfClass:[User class] fromJSONDictionary:json error:nil];

@@ -11,6 +11,6 @@
 
 @interface DiscogsClient : AFOAuth1Client
 
-+ (DiscogsClient*)sharedClient;
++ (DiscogsClient *)sharedClient;
 
 @end
