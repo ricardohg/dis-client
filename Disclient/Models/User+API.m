@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 ric. All rights reserved.
 //
 
+#import <AFHTTPRequestOperation.h>
 #import "User+API.h"
 #import "DiscogsClient.h"
 #import "Profile.h"
@@ -27,11 +28,12 @@ static NSString * const ACCESS_TOKEN_IDENTIFIER = @"ACCESS_TOKEN";
 + (void)authenticateUserWithBlock:(void (^)(AFOAuth1Token *token, NSError *error))block {
     
     DiscogsClient *authClient = [DiscogsClient sharedClient];
-    
+    [authClient registerHTTPOperationClass:[AFHTTPRequestOperation class]];
     // Your application will be sent to the background until the user authenticates, and then the app will be brought back using the callback URL
     [authClient authorizeUsingOAuthWithRequestTokenPath:requestTokenPathString userAuthorizationPath:userAuthorizationPathString callbackURL:[NSURL URLWithString:callBackUrlString] accessTokenPath:accessTokenPathString  accessMethod:accessMethodString scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
         if (block) {
             if ([AFOAuth1Token storeCredential:accessToken withIdentifier:ACCESS_TOKEN_IDENTIFIER]) {
+                [authClient unregisterHTTPOperationClass:[AFHTTPRequestOperation class]];
                 block(accessToken,nil);
             } else {
                 block(nil,nil);

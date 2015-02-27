@@ -10,6 +10,6 @@
 
 @interface DiscogsImage : NSObject
 
-+ (void)imageForUrl:(NSString*)imageUrl withBlock:(void(^)(UIImage * image, NSError * error))block;
++ (void)imageForUrl:(NSString*)imageUrl withBlock:(void(^)(UIImage *image, NSError *error))block;
 
 @end

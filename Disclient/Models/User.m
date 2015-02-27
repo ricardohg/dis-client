@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 ric. All rights reserved.
 //
 
-#import "User.h"
 #import <MTLJSONAdapter.h>
+#import "User.h"
 
 @implementation User
 

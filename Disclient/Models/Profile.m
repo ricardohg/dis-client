@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 ric. All rights reserved.
 //
 
-#import "Profile.h"
 #import <MTLValueTransformer.h>
+#import "Profile.h"
 
 @implementation Profile
 
