@@ -11,8 +11,8 @@
 #import "DiscogsClient.h"
 
 static NSString * const BASEURL = @"http://api.discogs.com/";
-static NSString * const OAUTHKEY = @"lxkCGGkXkHSXkyCOJAcA";
-static NSString * const OAUTHSECRET = @"ichoJaHRehRQZtSOWmhnvYSJRuqxsPhx";
+static NSString * const OAUTHKEY = @"uaSOLowAhDsthZekzlBK";
+static NSString * const OAUTHSECRET = @"cyDalciNJLfsXRlbDpHngprQScdlHTHE";
 
 static DiscogsClient * sharedClient;
 
@@ -25,6 +25,7 @@ static DiscogsClient * sharedClient;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedClient = [[DiscogsClient alloc] initWithBaseURL:[NSURL URLWithString:BASEURL] key:OAUTHKEY secret:OAUTHSECRET];
+        sharedClient.signatureMethod = AFPlainTextSignatureMethod;
         [sharedClient setDefaultHeader:@"Accept" value:@"application/json"];
         [sharedClient setParameterEncoding:AFJSONParameterEncoding];
         [sharedClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
@@ -34,7 +35,5 @@ static DiscogsClient * sharedClient;
     
     return sharedClient;
 }
-
-
 
 @end
