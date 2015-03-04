@@ -26,11 +26,6 @@
 		8C40FFFE186A0412007A763C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C40FFFD186A0412007A763C /* Images.xcassets */; };
 		8C46160B1979B5D9000087C7 /* ReleaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4616091979B5D9000087C7 /* ReleaseTableViewCell.m */; };
 		8C46160C1979B5D9000087C7 /* ReleaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C46160A1979B5D9000087C7 /* ReleaseTableViewCell.xib */; };
-		8C4616101979BF0C000087C7 /* DisLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C46160F1979BF0C000087C7 /* DisLabel.m */; };
-		8C6D9F2E18DFAA190024A07A /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9F2A18DFAA190024A07A /* segoeui.ttf */; };
-		8C6D9F2F18DFAA190024A07A /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9F2B18DFAA190024A07A /* segoeuib.ttf */; };
-		8C6D9F3018DFAA190024A07A /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9F2C18DFAA190024A07A /* segoeuii.ttf */; };
-		8C6D9F3118DFAA190024A07A /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9F2D18DFAA190024A07A /* segoeuil.ttf */; };
 		8C6D9F3518DFB6DB0024A07A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D9F3318DFB6DB0024A07A /* SearchViewController.m */; };
 		8C6D9F3618DFB6DB0024A07A /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D9F3418DFB6DB0024A07A /* SearchViewController.xib */; };
 		8C887B4B18CEB3840046ADD8 /* Wantlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C887B4A18CEB3840046ADD8 /* Wantlist.m */; };
@@ -83,12 +78,6 @@
 		8C4616081979B5D9000087C7 /* ReleaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReleaseTableViewCell.h; path = CustomViews/ReleaseTableViewCell.h; sourceTree = "<group>"; };
 		8C4616091979B5D9000087C7 /* ReleaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReleaseTableViewCell.m; path = CustomViews/ReleaseTableViewCell.m; sourceTree = "<group>"; };
 		8C46160A1979B5D9000087C7 /* ReleaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReleaseTableViewCell.xib; path = CustomViews/ReleaseTableViewCell.xib; sourceTree = "<group>"; };
-		8C46160E1979BF0C000087C7 /* DisLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisLabel.h; path = CustomClasses/DisLabel.h; sourceTree = "<group>"; };
-		8C46160F1979BF0C000087C7 /* DisLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisLabel.m; path = CustomClasses/DisLabel.m; sourceTree = "<group>"; };
-		8C6D9F2A18DFAA190024A07A /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeui.ttf; path = Fonts/segoeui.ttf; sourceTree = "<group>"; };
-		8C6D9F2B18DFAA190024A07A /* segoeuib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeuib.ttf; path = Fonts/segoeuib.ttf; sourceTree = "<group>"; };
-		8C6D9F2C18DFAA190024A07A /* segoeuii.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeuii.ttf; path = Fonts/segoeuii.ttf; sourceTree = "<group>"; };
-		8C6D9F2D18DFAA190024A07A /* segoeuil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeuil.ttf; path = Fonts/segoeuil.ttf; sourceTree = "<group>"; };
 		8C6D9F3218DFB6DB0024A07A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ViewControllers/SearchViewController.h; sourceTree = "<group>"; };
 		8C6D9F3318DFB6DB0024A07A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ViewControllers/SearchViewController.m; sourceTree = "<group>"; };
 		8C6D9F3418DFB6DB0024A07A /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = ViewControllers/SearchViewController.xib; sourceTree = "<group>"; };
@@ -243,9 +232,7 @@
 		8C40FFF1186A0412007A763C /* Disclient */ = {
 			isa = PBXGroup;
 			children = (
-				8C46160D1979BED2000087C7 /* CustomClasses */,
 				8C4616071979B56D000087C7 /* CustomViews */,
-				8C6D9F2918DA825A0024A07A /* Fonts */,
 				8C01298C18B03ADF00FABB64 /* ViewControllers */,
 				8C01298518B02F9400FABB64 /* Models */,
 				8C40FFFA186A0412007A763C /* AppDelegate.h */,
@@ -275,26 +262,6 @@
 				8C46160A1979B5D9000087C7 /* ReleaseTableViewCell.xib */,
 			);
 			name = CustomViews;
-			sourceTree = "<group>";
-		};
-		8C46160D1979BED2000087C7 /* CustomClasses */ = {
-			isa = PBXGroup;
-			children = (
-				8C46160E1979BF0C000087C7 /* DisLabel.h */,
-				8C46160F1979BF0C000087C7 /* DisLabel.m */,
-			);
-			name = CustomClasses;
-			sourceTree = "<group>";
-		};
-		8C6D9F2918DA825A0024A07A /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				8C6D9F2A18DFAA190024A07A /* segoeui.ttf */,
-				8C6D9F2B18DFAA190024A07A /* segoeuib.ttf */,
-				8C6D9F2C18DFAA190024A07A /* segoeuii.ttf */,
-				8C6D9F2D18DFAA190024A07A /* segoeuil.ttf */,
-			);
-			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,14 +351,10 @@
 			files = (
 				8CB5D96A18CE5268002D9BE9 /* BarScanViewController.xib in Resources */,
 				8C40FFF6186A0412007A763C /* InfoPlist.strings in Resources */,
-				8C6D9F2E18DFAA190024A07A /* segoeui.ttf in Resources */,
-				8C6D9F2F18DFAA190024A07A /* segoeuib.ttf in Resources */,
 				8C46160C1979B5D9000087C7 /* ReleaseTableViewCell.xib in Resources */,
 				8CFC7EF718D685FC00C5C47A /* WantlistViewController.xib in Resources */,
 				8C40FFFE186A0412007A763C /* Images.xcassets in Resources */,
-				8C6D9F3018DFAA190024A07A /* segoeuii.ttf in Resources */,
 				8C6D9F3618DFB6DB0024A07A /* SearchViewController.xib in Resources */,
-				8C6D9F3118DFAA190024A07A /* segoeuil.ttf in Resources */,
 				8C01299118B03B4600FABB64 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +404,6 @@
 				8C01298B18B02F9400FABB64 /* User.m in Sources */,
 				8CB5D96918CE5268002D9BE9 /* BarScanViewController.m in Sources */,
 				DB2DB3A81A9D8C3000A8072D /* Wantlist+API.m in Sources */,
-				8C4616101979BF0C000087C7 /* DisLabel.m in Sources */,
 				8CFC7EFA18D691BE00C5C47A /* DiscogsImage.m in Sources */,
 				8C40FFFC186A0412007A763C /* AppDelegate.m in Sources */,
 				8C01298A18B02F9400FABB64 /* DiscogsClient.m in Sources */,
