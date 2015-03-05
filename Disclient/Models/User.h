@@ -21,6 +21,6 @@
 @property (nonatomic, copy) NSString *resourceUrlString;
 @property (nonatomic, strong) Profile *profile;
 
-+ (User *)currentUser;
++ (User *)sharedUser;
 
 @end

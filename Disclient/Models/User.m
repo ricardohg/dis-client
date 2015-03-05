@@ -6,14 +6,13 @@
 //  Copyright (c) 2013 ric. All rights reserved.
 //
 
-#import <MTLJSONAdapter.h>
 #import "User.h"
 
 @implementation User
 
 #pragma mark - class methods
 
-+ (User *)currentUser {
++ (User *)sharedUser {
     static User * _currentUser;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

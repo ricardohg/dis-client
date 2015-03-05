@@ -6,21 +6,16 @@
 //  Copyright (c) 2014 ric. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <MTLModel.h>
+#import <MTLJSONAdapter.h>
+@class BasicInformation;
+@interface Wantlist : MTLModel <MTLJSONSerializing>
 
-@interface Wantlist : NSObject
-
-@property (nonatomic,strong) NSNumber *iD;
-@property (nonatomic,strong) NSString *notes;
-@property (nonatomic,assign) BOOL isPublic;
-@property (nonatomic,assign) int rating;
-@property (nonatomic,strong) NSString *title;
-@property (nonatomic,strong) NSString *thumbnailString;
-@property (nonatomic,strong) NSNumber *year;
-
-@property (nonatomic,strong) NSArray *artists;
-@property (nonatomic,strong) NSArray *labels;
-
-- (id)initWithData:(NSDictionary*)data;
+@property (nonatomic, strong) NSNumber *iD;
+@property (nonatomic, copy) NSString *notes;
+@property (nonatomic, assign) BOOL isPublic;
+@property (nonatomic, assign) NSInteger rating;
+@property (nonatomic, copy) NSString *resourceUrlString;
+@property (nonatomic, strong) BasicInformation *basicInformation;
 
 @end

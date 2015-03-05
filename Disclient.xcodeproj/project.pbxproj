@@ -38,6 +38,10 @@
 		8CFC7EFA18D691BE00C5C47A /* DiscogsImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF918D691BE00C5C47A /* DiscogsImage.m */; };
 		DB2940D11A9AEC87000ECB3F /* User+API.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2940D01A9AEC87000ECB3F /* User+API.m */; };
 		DB2DB3A81A9D8C3000A8072D /* Wantlist+API.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2DB3A71A9D8C3000A8072D /* Wantlist+API.m */; };
+		DBB810C91AA8047A006C7891 /* BasicInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB810C81AA8047A006C7891 /* BasicInformation.m */; };
+		DBB810CC1AA8049D006C7891 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB810CB1AA8049D006C7891 /* Artist.m */; };
+		DBB810CF1AA804C2006C7891 /* Label.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB810CE1AA804C2006C7891 /* Label.m */; };
+		DBB810D21AA8051F006C7891 /* Format.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB810D11AA8051F006C7891 /* Format.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +105,14 @@
 		DB2940D01A9AEC87000ECB3F /* User+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+API.m"; sourceTree = "<group>"; };
 		DB2DB3A61A9D8C3000A8072D /* Wantlist+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Wantlist+API.h"; sourceTree = "<group>"; };
 		DB2DB3A71A9D8C3000A8072D /* Wantlist+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Wantlist+API.m"; sourceTree = "<group>"; };
+		DBB810C71AA8047A006C7891 /* BasicInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInformation.h; sourceTree = "<group>"; };
+		DBB810C81AA8047A006C7891 /* BasicInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInformation.m; sourceTree = "<group>"; };
+		DBB810CA1AA8049D006C7891 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
+		DBB810CB1AA8049D006C7891 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		DBB810CD1AA804C2006C7891 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
+		DBB810CE1AA804C2006C7891 /* Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Label.m; sourceTree = "<group>"; };
+		DBB810D01AA8051F006C7891 /* Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Format.h; sourceTree = "<group>"; };
+		DBB810D11AA8051F006C7891 /* Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Format.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,14 @@
 				8CFC7EF118D6401000C5C47A /* Release.m */,
 				8CFC7EF818D691BD00C5C47A /* DiscogsImage.h */,
 				8CFC7EF918D691BE00C5C47A /* DiscogsImage.m */,
+				DBB810C71AA8047A006C7891 /* BasicInformation.h */,
+				DBB810C81AA8047A006C7891 /* BasicInformation.m */,
+				DBB810CA1AA8049D006C7891 /* Artist.h */,
+				DBB810CB1AA8049D006C7891 /* Artist.m */,
+				DBB810CD1AA804C2006C7891 /* Label.h */,
+				DBB810CE1AA804C2006C7891 /* Label.m */,
+				DBB810D01AA8051F006C7891 /* Format.h */,
+				DBB810D11AA8051F006C7891 /* Format.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -399,12 +419,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB810CF1AA804C2006C7891 /* Label.m in Sources */,
 				8C887B4B18CEB3840046ADD8 /* Wantlist.m in Sources */,
 				8C6D9F3518DFB6DB0024A07A /* SearchViewController.m in Sources */,
 				8C01298B18B02F9400FABB64 /* User.m in Sources */,
 				8CB5D96918CE5268002D9BE9 /* BarScanViewController.m in Sources */,
+				DBB810CC1AA8049D006C7891 /* Artist.m in Sources */,
 				DB2DB3A81A9D8C3000A8072D /* Wantlist+API.m in Sources */,
+				DBB810C91AA8047A006C7891 /* BasicInformation.m in Sources */,
 				8CFC7EFA18D691BE00C5C47A /* DiscogsImage.m in Sources */,
+				DBB810D21AA8051F006C7891 /* Format.m in Sources */,
 				8C40FFFC186A0412007A763C /* AppDelegate.m in Sources */,
 				8C01298A18B02F9400FABB64 /* DiscogsClient.m in Sources */,
 				DB2940D11A9AEC87000ECB3F /* User+API.m in Sources */,

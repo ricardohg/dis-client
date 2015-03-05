@@ -33,21 +33,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    //[self loadProfile];
+    [self loadProfile];
 
 }
 
 - (void)loadProfile
 {
     
-    [[User currentUser] getUserInfoWithBlock:^(User * user, NSError *error) {
+    [[User sharedUser] getUserInfoWithBlock:^(User * user, NSError *error) {
         if (!error) {
             
-            [[User currentUser] userProfileForUserName:user.userName withBlock:^(Profile *profile, NSError *error) {
+            [[User sharedUser] userProfileForUserName:user.userName withBlock:^(Profile *profile, NSError *error) {
                 
                 //store profile in current user
                 
-                User * currentUser = [User currentUser];
+                User * currentUser = [User sharedUser];
                 currentUser.profile = profile;
                 
                 //show data 
@@ -72,7 +72,7 @@
 - (IBAction)authPressed:(id)sender
 {
     [User authenticateUserWithBlock:^(AFOAuth1Token *token, NSError *error) {
-        [[User currentUser] setToken:token];
+        [[User sharedUser] setToken:token];
     }];
 }
 

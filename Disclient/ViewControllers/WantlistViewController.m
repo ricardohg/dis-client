@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 ric. All rights reserved.
 //
 
-#import "WantlistViewController.h"
 #import "Wantlist+API.h"
+#import "BasicInformation.h"
+#import "WantlistViewController.h"
 #import "User.h"
 #import "DiscogsClient.h"
 #import "DiscogsImage.h"
@@ -56,7 +57,7 @@
 
 - (void)loadWantList {
     
-    User * user = [User currentUser];
+    User * user = [User sharedUser];
     [Wantlist wantlistForUser:user forPage:@(1) AndNumberOfItems:@(10) withBlock:^(NSArray *awantlistArray, NSError *error) {
         wantlistArray = awantlistArray;
         [refresh endRefreshing];
@@ -83,10 +84,10 @@
     
     Wantlist * want = wantlistArray[indexPath.row];
     
-    cell.titleLabel.text = want.title;
-    cell.yearLabel.text = want.year.stringValue;
+    cell.titleLabel.text = want.basicInformation.titleString;
+    cell.yearLabel.text = want.basicInformation.yearNumber.stringValue;
     
-    [DiscogsImage imageForUrl:want.thumbnailString withBlock:^(UIImage *image, NSError *error) {
+    [DiscogsImage imageForUrlString:want.basicInformation.thumbUrlString withBlock:^(UIImage *image, NSError *error) {
         cell.releaseImageView.image = image;
     }];
     
