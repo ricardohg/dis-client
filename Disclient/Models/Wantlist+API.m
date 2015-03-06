@@ -28,6 +28,7 @@
     [client getPath:user.profile.wantlistUrlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id json) {
         
         NSArray *wantlistArray = nil;
+        
         if (json[@"wants"]) {
             wantlistArray = json[@"wants"];
         }
@@ -63,6 +64,29 @@
     
     NSString *path = [NSString stringWithFormat:@"%@/%@",user.profile.wantlistUrlString,[releaseId stringValue]];
     
+    [client putPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id json) {
+        Wantlist *want = [MTLJSONAdapter modelOfClass:[Wantlist class] fromJSONDictionary:json error:nil];
+        if (block) {
+            block(want,nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(nil,error);
+        }
+    }];
+}
+
++ (void)editWantlistForUser:(User *)user releaseId:(NSNumber *)releaseId notes:(NSString *)notes andRating:(NSNumber *)rating withBlock:(void (^)(Wantlist *want, NSError *error))block
+{
+    DiscogsClient *client = [DiscogsClient sharedClient];
+    NSDictionary *parameters = nil;
+    
+    if (notes && rating) {
+        parameters = @{@"notes":notes,@"rating":rating};
+    }
+    
+    NSString *path = [NSString stringWithFormat:@"%@/%@",user.profile.wantlistUrlString,[releaseId stringValue]];
+    
     [client postPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id json) {
         Wantlist *want = [MTLJSONAdapter modelOfClass:[Wantlist class] fromJSONDictionary:json error:nil];
         if (block) {
@@ -73,6 +97,7 @@
             block(nil,error);
         }
     }];
+    
 }
 
 + (void)deleteFromWantlistForUser:(User *)user andReleaseId:(NSNumber *)releaseId withBlock:(void (^)(NSError *error))block
