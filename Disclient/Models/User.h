@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 ric. All rights reserved.
 //
 
-
 #import <MTLModel.h>
 #import <MTLJSONAdapter.h>
 

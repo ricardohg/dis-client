@@ -12,7 +12,8 @@
 
 #pragma mark - class methods
 
-+ (User *)sharedUser {
++ (User *)sharedUser
+{
     static User * _currentUser;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

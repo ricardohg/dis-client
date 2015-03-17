@@ -36,8 +36,11 @@
 		8CFC7EF618D685FC00C5C47A /* WantlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF418D685FC00C5C47A /* WantlistViewController.m */; };
 		8CFC7EF718D685FC00C5C47A /* WantlistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF518D685FC00C5C47A /* WantlistViewController.xib */; };
 		8CFC7EFA18D691BE00C5C47A /* DiscogsImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC7EF918D691BE00C5C47A /* DiscogsImage.m */; };
+		DB148F511AB7DA6C00F58232 /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = DB148F501AB7DA6C00F58232 /* Rating.m */; };
 		DB2940D11A9AEC87000ECB3F /* User+API.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2940D01A9AEC87000ECB3F /* User+API.m */; };
 		DB2DB3A81A9D8C3000A8072D /* Wantlist+API.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2DB3A71A9D8C3000A8072D /* Wantlist+API.m */; };
+		DB8633771AA946C40067F3F1 /* Release+API.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8633761AA946C40067F3F1 /* Release+API.m */; };
+		DB86337A1AA951650067F3F1 /* Community.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8633791AA951650067F3F1 /* Community.m */; };
 		DBB810C91AA8047A006C7891 /* BasicInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB810C81AA8047A006C7891 /* BasicInformation.m */; };
 		DBB810CC1AA8049D006C7891 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB810CB1AA8049D006C7891 /* Artist.m */; };
 		DBB810CF1AA804C2006C7891 /* Label.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB810CE1AA804C2006C7891 /* Label.m */; };
@@ -101,10 +104,16 @@
 		8CFC7EF918D691BE00C5C47A /* DiscogsImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscogsImage.m; sourceTree = "<group>"; };
 		9C2091FF261BFAFA8366832A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B2EAD254A1364322B3E87ECB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB148F4F1AB7DA6C00F58232 /* Rating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rating.h; sourceTree = "<group>"; };
+		DB148F501AB7DA6C00F58232 /* Rating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rating.m; sourceTree = "<group>"; };
 		DB2940CF1A9AEC87000ECB3F /* User+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+API.h"; sourceTree = "<group>"; };
 		DB2940D01A9AEC87000ECB3F /* User+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+API.m"; sourceTree = "<group>"; };
 		DB2DB3A61A9D8C3000A8072D /* Wantlist+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Wantlist+API.h"; sourceTree = "<group>"; };
 		DB2DB3A71A9D8C3000A8072D /* Wantlist+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Wantlist+API.m"; sourceTree = "<group>"; };
+		DB8633751AA946C40067F3F1 /* Release+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Release+API.h"; sourceTree = "<group>"; };
+		DB8633761AA946C40067F3F1 /* Release+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Release+API.m"; sourceTree = "<group>"; };
+		DB8633781AA951650067F3F1 /* Community.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Community.h; sourceTree = "<group>"; };
+		DB8633791AA951650067F3F1 /* Community.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Community.m; sourceTree = "<group>"; };
 		DBB810C71AA8047A006C7891 /* BasicInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInformation.h; sourceTree = "<group>"; };
 		DBB810C81AA8047A006C7891 /* BasicInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInformation.m; sourceTree = "<group>"; };
 		DBB810CA1AA8049D006C7891 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
@@ -166,6 +175,8 @@
 				DB2DB3A71A9D8C3000A8072D /* Wantlist+API.m */,
 				8CFC7EF018D6401000C5C47A /* Release.h */,
 				8CFC7EF118D6401000C5C47A /* Release.m */,
+				DB8633751AA946C40067F3F1 /* Release+API.h */,
+				DB8633761AA946C40067F3F1 /* Release+API.m */,
 				8CFC7EF818D691BD00C5C47A /* DiscogsImage.h */,
 				8CFC7EF918D691BE00C5C47A /* DiscogsImage.m */,
 				DBB810C71AA8047A006C7891 /* BasicInformation.h */,
@@ -176,6 +187,10 @@
 				DBB810CE1AA804C2006C7891 /* Label.m */,
 				DBB810D01AA8051F006C7891 /* Format.h */,
 				DBB810D11AA8051F006C7891 /* Format.m */,
+				DB8633781AA951650067F3F1 /* Community.h */,
+				DB8633791AA951650067F3F1 /* Community.m */,
+				DB148F4F1AB7DA6C00F58232 /* Rating.h */,
+				DB148F501AB7DA6C00F58232 /* Rating.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,13 +443,16 @@
 				DB2DB3A81A9D8C3000A8072D /* Wantlist+API.m in Sources */,
 				DBB810C91AA8047A006C7891 /* BasicInformation.m in Sources */,
 				8CFC7EFA18D691BE00C5C47A /* DiscogsImage.m in Sources */,
+				DB86337A1AA951650067F3F1 /* Community.m in Sources */,
 				DBB810D21AA8051F006C7891 /* Format.m in Sources */,
 				8C40FFFC186A0412007A763C /* AppDelegate.m in Sources */,
 				8C01298A18B02F9400FABB64 /* DiscogsClient.m in Sources */,
 				DB2940D11A9AEC87000ECB3F /* User+API.m in Sources */,
 				8C01299018B03B4600FABB64 /* HomeViewController.m in Sources */,
+				DB8633771AA946C40067F3F1 /* Release+API.m in Sources */,
 				8CE676D818CD46CA0075140B /* Profile.m in Sources */,
 				8C40FFF8186A0412007A763C /* main.m in Sources */,
+				DB148F511AB7DA6C00F58232 /* Rating.m in Sources */,
 				8CFC7EF618D685FC00C5C47A /* WantlistViewController.m in Sources */,
 				8C46160B1979B5D9000087C7 /* ReleaseTableViewCell.m in Sources */,
 				8CFC7EF218D6401000C5C47A /* Release.m in Sources */,

@@ -13,6 +13,7 @@
 #import "DiscogsClient.h"
 #import "DiscogsImage.h"
 #import "ReleaseTableViewCell.h"
+#import "Release+API.h"
 
 @interface WantlistViewController () <UITableViewDataSource,UITableViewDelegate> {
     NSArray * wantlistArray;
@@ -50,8 +51,10 @@
     
     wantListTableView.delegate = self;
     wantListTableView.dataSource = self;
-    
-    [self loadWantList];
+    [Release releaseWithId:@(883379) withBlock:^(Release *release, NSError *error) {
+        
+    }];
+    //[self loadWantList];
     
 }
 
