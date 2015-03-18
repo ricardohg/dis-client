@@ -173,44 +173,7 @@
 		8C01298518B02F9400FABB64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8C01298618B02F9400FABB64 /* DiscogsClient.h */,
-				8C01298718B02F9400FABB64 /* DiscogsClient.m */,
-				8C01298818B02F9400FABB64 /* User.h */,
-				8C01298918B02F9400FABB64 /* User.m */,
-				DB2940CF1A9AEC87000ECB3F /* User+API.h */,
-				DB2940D01A9AEC87000ECB3F /* User+API.m */,
-				8CE676D618CD46CA0075140B /* Profile.h */,
-				8CE676D718CD46CA0075140B /* Profile.m */,
-				8C887B4918CEB3840046ADD8 /* Wantlist.h */,
-				8C887B4A18CEB3840046ADD8 /* Wantlist.m */,
-				DB2DB3A61A9D8C3000A8072D /* Wantlist+API.h */,
-				DB2DB3A71A9D8C3000A8072D /* Wantlist+API.m */,
-				8CFC7EF018D6401000C5C47A /* Release.h */,
-				8CFC7EF118D6401000C5C47A /* Release.m */,
-				DB8633751AA946C40067F3F1 /* Release+API.h */,
-				DB8633761AA946C40067F3F1 /* Release+API.m */,
-				8CFC7EF818D691BD00C5C47A /* Image.h */,
-				8CFC7EF918D691BE00C5C47A /* Image.m */,
-				DB69BEE71AB920650094B15A /* Image+API.h */,
-				DB69BEE81AB920650094B15A /* Image+API.m */,
-				DBB810C71AA8047A006C7891 /* BasicInformation.h */,
-				DBB810C81AA8047A006C7891 /* BasicInformation.m */,
-				DBB810CA1AA8049D006C7891 /* Artist.h */,
-				DBB810CB1AA8049D006C7891 /* Artist.m */,
-				DBB810CD1AA804C2006C7891 /* Label.h */,
-				DBB810CE1AA804C2006C7891 /* Label.m */,
-				DBB810D01AA8051F006C7891 /* Format.h */,
-				DBB810D11AA8051F006C7891 /* Format.m */,
-				DB8633781AA951650067F3F1 /* Community.h */,
-				DB8633791AA951650067F3F1 /* Community.m */,
-				DB148F4F1AB7DA6C00F58232 /* Rating.h */,
-				DB148F501AB7DA6C00F58232 /* Rating.m */,
-				DB69BEE41AB915250094B15A /* Identifier.h */,
-				DB69BEE51AB915250094B15A /* Identifier.m */,
-				DB69BEEA1AB925EA0094B15A /* Track.h */,
-				DB69BEEB1AB925EA0094B15A /* Track.m */,
-				DB69BEED1AB9290A0094B15A /* Video.h */,
-				DB69BEEE1AB9290A0094B15A /* Video.m */,
+				DB69BEF01AB92F220094B15A /* Discogs */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +280,91 @@
 				8C46160A1979B5D9000087C7 /* ReleaseTableViewCell.xib */,
 			);
 			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		DB69BEF01AB92F220094B15A /* Discogs */ = {
+			isa = PBXGroup;
+			children = (
+				DB69BEF51AB9301F0094B15A /* Client */,
+				DB69BEF41AB930060094B15A /* Image */,
+				DB69BEF31AB92FC40094B15A /* Wantlist */,
+				DB69BEF21AB92F9C0094B15A /* User */,
+				DB69BEF11AB92F500094B15A /* Database */,
+			);
+			name = Discogs;
+			sourceTree = "<group>";
+		};
+		DB69BEF11AB92F500094B15A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				8CFC7EF018D6401000C5C47A /* Release.h */,
+				8CFC7EF118D6401000C5C47A /* Release.m */,
+				DB8633751AA946C40067F3F1 /* Release+API.h */,
+				DB8633761AA946C40067F3F1 /* Release+API.m */,
+				DBB810C71AA8047A006C7891 /* BasicInformation.h */,
+				DBB810C81AA8047A006C7891 /* BasicInformation.m */,
+				DBB810CA1AA8049D006C7891 /* Artist.h */,
+				DBB810CB1AA8049D006C7891 /* Artist.m */,
+				DBB810CD1AA804C2006C7891 /* Label.h */,
+				DBB810CE1AA804C2006C7891 /* Label.m */,
+				DBB810D01AA8051F006C7891 /* Format.h */,
+				DBB810D11AA8051F006C7891 /* Format.m */,
+				DB8633781AA951650067F3F1 /* Community.h */,
+				DB8633791AA951650067F3F1 /* Community.m */,
+				DB148F4F1AB7DA6C00F58232 /* Rating.h */,
+				DB148F501AB7DA6C00F58232 /* Rating.m */,
+				DB69BEE41AB915250094B15A /* Identifier.h */,
+				DB69BEE51AB915250094B15A /* Identifier.m */,
+				DB69BEEA1AB925EA0094B15A /* Track.h */,
+				DB69BEEB1AB925EA0094B15A /* Track.m */,
+				DB69BEED1AB9290A0094B15A /* Video.h */,
+				DB69BEEE1AB9290A0094B15A /* Video.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		DB69BEF21AB92F9C0094B15A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8C01298818B02F9400FABB64 /* User.h */,
+				8C01298918B02F9400FABB64 /* User.m */,
+				DB2940CF1A9AEC87000ECB3F /* User+API.h */,
+				DB2940D01A9AEC87000ECB3F /* User+API.m */,
+				8CE676D618CD46CA0075140B /* Profile.h */,
+				8CE676D718CD46CA0075140B /* Profile.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		DB69BEF31AB92FC40094B15A /* Wantlist */ = {
+			isa = PBXGroup;
+			children = (
+				8C887B4918CEB3840046ADD8 /* Wantlist.h */,
+				8C887B4A18CEB3840046ADD8 /* Wantlist.m */,
+				DB2DB3A61A9D8C3000A8072D /* Wantlist+API.h */,
+				DB2DB3A71A9D8C3000A8072D /* Wantlist+API.m */,
+			);
+			name = Wantlist;
+			sourceTree = "<group>";
+		};
+		DB69BEF41AB930060094B15A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8CFC7EF818D691BD00C5C47A /* Image.h */,
+				8CFC7EF918D691BE00C5C47A /* Image.m */,
+				DB69BEE71AB920650094B15A /* Image+API.h */,
+				DB69BEE81AB920650094B15A /* Image+API.m */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		DB69BEF51AB9301F0094B15A /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				8C01298618B02F9400FABB64 /* DiscogsClient.h */,
+				8C01298718B02F9400FABB64 /* DiscogsClient.m */,
+			);
+			name = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
