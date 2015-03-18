@@ -74,9 +74,8 @@ static NSString * const ACCESS_TOKEN_IDENTIFIER = @"ACCESS_TOKEN";
     
     DiscogsClient * client = [DiscogsClient sharedClient];
     NSString * path = [NSString stringWithFormat:@"%@/%@",usersPathString,user];
-    [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id json) {
-        
-        Profile * profile = [MTLJSONAdapter modelOfClass:[Profile class] fromJSONDictionary:json error:nil];
+    [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id json) {        
+        Profile *profile = [MTLJSONAdapter modelOfClass:[Profile class] fromJSONDictionary:json error:nil];
         if (block) {
             block(profile,nil);
         }

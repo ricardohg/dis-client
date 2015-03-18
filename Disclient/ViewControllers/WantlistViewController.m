@@ -7,11 +7,11 @@
 //
 
 #import "Wantlist+API.h"
+#import "Image+API.h"
 #import "BasicInformation.h"
 #import "WantlistViewController.h"
 #import "User.h"
 #import "DiscogsClient.h"
-#import "DiscogsImage.h"
 #import "ReleaseTableViewCell.h"
 #import "Release+API.h"
 
@@ -90,7 +90,7 @@
     cell.titleLabel.text = want.basicInformation.titleString;
     cell.yearLabel.text = want.basicInformation.yearNumber.stringValue;
     
-    [DiscogsImage imageForUrlString:want.basicInformation.thumbUrlString withBlock:^(UIImage *image, NSError *error) {
+    [Image imageForUrlString:want.basicInformation.thumbUrlString withBlock:^(UIImage *image, NSError *error) {
         cell.releaseImageView.image = image;
     }];
     

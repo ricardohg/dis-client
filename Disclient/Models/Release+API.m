@@ -18,8 +18,9 @@
     DiscogsClient *client = [DiscogsClient sharedClient];
     NSString *path = [NSString stringWithFormat:@"/releases/%@",[releaseId stringValue]];
     [client getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id json) {
+        Release *release = [MTLJSONAdapter modelOfClass:[Release class] fromJSONDictionary:json error:nil];
         if (block) {
-            block(nil,nil);
+            block(release,nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {

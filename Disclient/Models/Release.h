@@ -34,6 +34,7 @@
 @property (nonatomic, copy) NSString *countryString;
 @property (nonatomic, copy) NSString *notesString;
 @property (nonatomic, strong) NSArray *companiesArray;
+@property (nonatomic, strong) NSArray *identifiersArray;
 @property (nonatomic, copy) NSString *urlString;
 @property (nonatomic, strong) NSArray *artistsArray;
 @property (nonatomic, strong) NSArray *formatsArray;

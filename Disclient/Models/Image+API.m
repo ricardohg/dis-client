@@ -1,15 +1,15 @@
 //
-//  DiscogsImage.m
+//  Image+API.m
 //  Disclient
 //
-//  Created by ricardo hernandez on 3/16/14.
-//  Copyright (c) 2014 ric. All rights reserved.
+//  Created by Hernandez Garcia, Ricardo(AWF) on 3/17/15.
+//  Copyright (c) 2015 ric. All rights reserved.
 //
 
-#import "DiscogsImage.h"
 #import "DiscogsClient.h"
+#import "Image+API.h"
 
-@implementation DiscogsImage
+@implementation Image (API)
 
 + (void)imageForUrlString:(NSString *)imageUrlString withBlock:(void (^)(UIImage *image, NSError *error))block {
     
@@ -25,4 +25,6 @@
     }];
     
 }
+
+
 @end
