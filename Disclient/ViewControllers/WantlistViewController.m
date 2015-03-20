@@ -13,7 +13,6 @@
 #import "User.h"
 #import "DiscogsClient.h"
 #import "ReleaseTableViewCell.h"
-#import "Release+API.h"
 #import "MasterRelease+API.h"
 
 @interface WantlistViewController () <UITableViewDataSource,UITableViewDelegate> {
@@ -31,7 +30,6 @@
     if (self) {
         // Custom initialization
         self.title = @"Wantlist";
-
     }
     return self;
 }
@@ -52,13 +50,8 @@
     
     wantListTableView.delegate = self;
     wantListTableView.dataSource = self;
-    [Release releaseWithId:@(883379) withBlock:^(Release *release, NSError *error) {
-        
-    }];
-    [MasterRelease masterReleaseWithId:@1000 withBlock:^(MasterRelease *masterRelease, NSError *error) {
-        
-    }];
-    //[self loadWantList];
+    
+    [self loadWantList];
     
 }
 

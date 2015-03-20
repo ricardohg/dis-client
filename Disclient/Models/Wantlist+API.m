@@ -27,27 +27,19 @@
     
     [client getPath:user.profile.wantlistUrlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id json) {
         
-        NSArray *wantlistArray = nil;
+        NSArray *wantlistJSONArray = nil;
         
         if (json[@"wants"]) {
-            wantlistArray = json[@"wants"];
+            wantlistJSONArray = json[@"wants"];
         }
-        
-        NSMutableArray *responseWantList = [NSMutableArray array];
-        
-        for (NSDictionary *dictionary in wantlistArray) {
-            Wantlist *want = [MTLJSONAdapter modelOfClass:[Wantlist class] fromJSONDictionary:dictionary error:nil];
-            [responseWantList addObject:want];
-
-        }
-
+        NSArray *wantListArray = [MTLJSONAdapter modelsOfClass:[Wantlist class] fromJSONArray:wantlistJSONArray error:nil];
         if (block) {
-            block(responseWantList,nil);
+            block(wantListArray, nil);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
-            block(nil,error);
+            block(nil, error);
         }
     }];
     

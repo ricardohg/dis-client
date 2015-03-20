@@ -10,6 +10,6 @@
 
 @interface MasterRelease (API)
 
-+ (void)masterReleaseWithId:(NSNumber *)masterId withBlock:(void(^)(MasterRelease *masterRelease, NSError *error))block;
-
++ (void)masterReleaseForId:(NSNumber *)masterId withBlock:(void(^)(MasterRelease *masterRelease, NSError *error))block;
++ (void)masterReleaseVersionsForId:(NSNumber *)masterId forPage:(NSNumber *)page AndNumberOfItems:(NSNumber *)numberOfItems withBlock:(void(^)(NSArray *masterReleaseVersionsArray, NSError *error))block;
 @end
