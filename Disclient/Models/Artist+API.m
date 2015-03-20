@@ -12,7 +12,7 @@
 
 @implementation Artist (API)
 
-+ (void)artistForId:(NSNumber *)artistId withBlock:(void (^)(Artist *, NSError *))block
++ (void)artistForId:(NSNumber *)artistId withBlock:(void (^)(Artist *artist, NSError *error))block
 {
     DiscogsClient *client = [DiscogsClient sharedClient];
     NSString *path = [NSString stringWithFormat:@"/artists/%@",[artistId stringValue]];
@@ -30,7 +30,7 @@
     
 }
 
-+ (void)artistReleasesForId:(NSNumber *)artistId forPage:(NSNumber *)page AndNumberOfItems:(NSNumber *)numberOfItems withBlock:(void (^)(NSArray *, NSError *))block
++ (void)artistReleasesForId:(NSNumber *)artistId forPage:(NSNumber *)page AndNumberOfItems:(NSNumber *)numberOfItems withBlock:(void (^)(NSArray *releasesArray, NSError *error))block
 {
     
     DiscogsClient *client = [DiscogsClient sharedClient];
