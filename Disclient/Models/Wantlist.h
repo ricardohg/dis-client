@@ -8,7 +8,9 @@
 
 #import <MTLModel.h>
 #import <MTLJSONAdapter.h>
+
 @class BasicInformation;
+
 @interface Wantlist : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, strong) NSNumber *iD;
