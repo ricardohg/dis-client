@@ -13,7 +13,7 @@
 #import "User.h"
 #import "DiscogsClient.h"
 #import "ReleaseTableViewCell.h"
-#import "MasterRelease+API.h"
+#import "Artist+API.h"
 
 @interface WantlistViewController () <UITableViewDataSource,UITableViewDelegate> {
     NSArray * wantlistArray;
@@ -51,7 +51,15 @@
     wantListTableView.delegate = self;
     wantListTableView.dataSource = self;
     
-    [self loadWantList];
+    [Artist artistForId:@108713 withBlock:^(Artist *artist, NSError *error) {
+        
+    }];
+    
+    [Artist artistReleasesForId:@108713 forPage:@1 AndNumberOfItems:@15 withBlock:^(NSArray *artistReleasesArray, NSError *error) {
+        
+    }];
+    
+    //[self loadWantList];
     
 }
 
